@@ -30,6 +30,5 @@
     <node name="rviz" pkg="rviz" type="rviz" 
         args="--display-config $(find zau_bringup)/config/$(arg rviz_config).rviz" required="false" >
     </node>
-
     
 </launch>
