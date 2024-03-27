@@ -1,6 +1,6 @@
 # Zau
-Repository used for calibrate the Zau mobile manipulator from INESC TEC
 
+Repository used for calibrate the Zau mobile manipulator from INESC TEC
 
 ## Intel RealSense L515
 
@@ -21,3 +21,13 @@ To start it, run:
 ```
 roslaunch zau_bringup intel_l515_bringup.launch
 ```
+
+## Astra
+
+
+To use the Astra cameras, the `astra_camera` package is needed, which can be installed from https://github.com/orbbec/ros_astra_camera.git.
+
+
+To launch, use:
+
+`roslaunch zau_bringup astra.launch`
