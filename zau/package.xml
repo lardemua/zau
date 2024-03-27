@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+	<name>zau</name>
+	<version>0.0.0</version>
+	<description>A meta package for compiling all zau packages.</description>
+	<maintainer email="manuelgomes@ua.pt">Manuel Gomes</maintainer>
+	<license>GPLv3</license>
+
+	<buildtool_depend>catkin</buildtool_depend>
+
+	<exec_depend>zau_bringup</exec_depend>
+	<exec_depend>zau_description</exec_depend>
+
+	<export>
+		<metapackage/>
+	</export>
+</package>
