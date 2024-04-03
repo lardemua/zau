@@ -38,3 +38,24 @@ To launch, use:
 
 `roslaunch zau_bringup astra.launch`
 
+
+## VLP-16
+
+To use the Velodyne Puck, please configure your ethernet connection, in this case `eth0`, with the Velodyne by:
+
+```
+sudo ifconfig eth0 192.168.3.100
+sudo route add 192.168.1.203 eth0
+```
+
+and by installing:
+
+```
+sudo apt-get install ros-$ROS_DISTRO-velodyne
+```
+
+To run it, please use:
+
+```
+roslaunch zau_bringup VLP16_bringup.launch
+```
