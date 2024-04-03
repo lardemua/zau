@@ -6,6 +6,8 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Image1
+        - /Image2
       Splitter Ratio: 0.5
     Tree Height: 1168
   - Class: rviz/Selection
@@ -63,13 +65,13 @@ Visualization Manager:
       Unreliable: false
       Value: false
       Visibility:
-        "": true
         Grid: true
+        Image: true
         Value: true
       Zoom Factor: 1
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /body_camera/color/image_raw
+      Image Topic: /hand_camera/color/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -81,7 +83,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /body_camera/depth/image_rect_raw
+      Image Topic: /hand_camera/depth/image_rect_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
