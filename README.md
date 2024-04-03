@@ -15,12 +15,18 @@ And run the following command to define the usb rules for the camera:
 ```
 sudo wget https://raw.githubusercontent.com/IntelRealSense/librealsense/master/config/99-realsense-libusb.rules -P /etc/udev/rules.d/
 ```
+##### Note
+If the user us running on a container, this command should be executed at the **host** system.
 
 To start it, run:
 
 ```
 roslaunch zau_bringup intel_l515_bringup.launch
 ```
+## Intel RealSense T265
+
+The **Intel RealSense T265** uses the same libraries as the [L515](https://github.com/lardemua/zau/blob/a27690b52e5cbb263a8f651a7b7f4826509fc108/README.md#L5-L6). If the user didn't configure the **L515** yet and wants to use the **T265**, execute the **L515** installation commands.
+
 
 ## Astra
 
@@ -31,3 +37,4 @@ To use the Astra cameras, the `astra_camera` package is needed, which can be ins
 To launch, use:
 
 `roslaunch zau_bringup astra.launch`
+

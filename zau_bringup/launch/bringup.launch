@@ -1,0 +1,61 @@
+<launch>
+    <!-- Global Args -->
+    <arg name="rviz_config"         default = "real_sense" />
+    <arg name="visualize"           default = "false"/>
+
+    <!-- Intel RealSense T265 / L515 Args -->
+    <arg name="t265_camera"         default = "vo_camera"/>
+    <arg name="device_type"         default = "t265"/>
+    <arg name="publish_odom_tf"     default = "true"/>
+    <arg name="initial_reset"       default = "false"/>
+    <arg name="enable_sync"         default = "true"/>
+
+    <!-- Astra Pro Args -->
+    <arg name="cam1_name" default="astra0"/>
+    <arg name="cam1_serial_number" default="20101230086" />
+    <arg name="num_orbbec_cameras" default="1" />
+    <arg name="width" default="1280"/>
+    <arg name="height" default="720"/>
+    <arg name="video_device_cam1" default="/dev/video0"/>
+
+    <!-- Intel RealSense T265 Launch -->
+    <include file = "$(find zau_bringup)/launch/intel_t265_bringup.launch">
+        <arg     name = "camera"              value = "$(arg t265_camera)"/>
+        <arg     name = "device_type"         default = "t265"/>
+        <arg     name = "publish_odom_tf"     default = "true"/>
+        <arg     name = "initial_reset"       default = "false"/>
+        <arg     name = "enable_sync"         default = "true"/>
+    </include>
+
+
+    <!-- Intel RealSense L515 Launch -->
+    <include file = "$(find zau_bringup)/launch/intel_l515_bringup.launch">
+        <arg     name = "camera" default        = "body_camera"/>
+        <arg     name = "device_type" default   = "l515"/>
+        <arg     name = "publish_tf" default    = "false"/>
+        <arg     name = "initial_reset" default = "true"/>
+        <arg     name = "enable_sync" default   = "true"/>
+        <arg     name = "rviz_config" default   = "real_sense" />
+        <arg     name = "visualize" default     = "false"/>
+    </include>
+    
+    <!-- Astra Pro Launch -->
+    <include file = "$(find zau_bringup)/launch/astra_bringup.launch">
+        <arg     name = "cam1_name" default          = "astra0"/>
+        <arg     name = "cam1_serial_number" default = "20101230086" />
+        <arg     name = "num_orbbec_cameras" default = "1" />
+        <arg     name = "width" default              = "1280"/>
+        <arg     name = "height" default             = "720"/>
+        <arg     name = "video_device_cam1" default  = "/dev/video0"/>
+        <arg     name = "rviz_config" default        = "astra"/>
+    </include>
+
+    <!-- RViz Visualization -->
+    <group if   = "$(arg visualize)">
+    <node  name = "rviz" pkg = "rviz" type = "rviz"
+           args = "--display-config $(find zau_bringup)/config/$(arg rviz_config).rviz" required = "false" >
+        </node>
+    </group>
+
+    
+</launch>

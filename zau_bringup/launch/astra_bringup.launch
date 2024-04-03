@@ -6,6 +6,7 @@
     <arg name="height" default="720"/>
     <arg name="video_device_cam1" default="/dev/video0"/>
     <arg name="rviz_config" default="astra"/>
+    <arg name="visualize"           default = "false"/>
 
 
     <!-- FOR RGB IMAGE -->
@@ -35,8 +36,10 @@
         <arg name="device_num" value="$(arg num_orbbec_cameras)"/>
     </include>
 
-    <node name="rviz" pkg="rviz" type="rviz"
-        args="--display-config $(find zau_bringup)/config/$(arg rviz_config).rviz" required="false">
-    </node>
+    <group if="$(arg visualize)">
+        <node name="rviz" pkg="rviz" type="rviz"
+            args="--display-config $(find zau_bringup)/config/$(arg rviz_config).rviz" required="false">
+        </node>
+    </group>
 
 </launch>
