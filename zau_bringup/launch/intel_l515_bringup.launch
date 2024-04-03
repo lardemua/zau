@@ -35,6 +35,5 @@
         </node>
     </group>
 
-    <!-- Launch Gazebo-->
     
 </launch>
