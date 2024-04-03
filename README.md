@@ -27,6 +27,12 @@ roslaunch zau_bringup intel_l515_bringup.launch
 
 The **Intel RealSense T265** uses the same libraries as the [L515](https://github.com/lardemua/zau/blob/a27690b52e5cbb263a8f651a7b7f4826509fc108/README.md#L5-L6). If the user didn't configure the **L515** yet and wants to use the **T265**, execute the **L515** installation commands.
 
+To start it, run :
+
+```
+roslaunch zau_bringup intel_t265_bringup.launch
+```
+
 
 ## Astra
 
