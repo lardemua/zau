@@ -3,11 +3,12 @@
     <arg name="cam_serial_number" default="20101230086" />
     <arg name="cam_video_device" default="/dev/video0"/>
 
-    <arg name="num_orbbec_cameras" default="1" />
-    <arg name="width" default="1280"/>
-    <arg name="height" default="720"/>
-    <arg name="rviz_config" default="astra"/>
-    <arg name="visualize"           default = "false"/>
+    <arg name = "num_orbbec_cameras"  default = "1" />
+    <arg name = "width"               default = "1280"/>
+    <arg name = "height"              default = "720"/>
+    <arg name = "rviz_config"         default = "astra"/>
+    <arg name = "visualize"           default = "false"/>
+    <arg name = "framerate"           default = "10"/>
 
 
     <!-- FOR RGB IMAGE -->
@@ -19,7 +20,7 @@
         <param name="pixel_format" value="mjpeg"/>
         <param name="camera_frame_id" value="$(arg cam_name)_optical_frame"/>
         <param name="io_method" value="mmap"/>
-        <param name="framerate" value = "25"/> 
+        <param name="framerate" value = "$(arg framerate)"/> 
     </node>
 
     <!-- FOR DEPTH IMAGE -->
