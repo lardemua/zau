@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="description_file" default="zau.urdf.xacro"/> 
+    <param name="robot_description" command="xacro '$(find zau_description)/urdf/$(arg description_file)'" />
+</launch>
