@@ -3,51 +3,93 @@
     <arg name="rviz_config"         default = "real_sense" />
     <arg name="visualize"           default = "false"/>
 
-    <!-- Intel RealSense T265 / L515 Args -->
-    <arg name="t265_camera"         default = "vo_camera"/>
-    <arg name="device_type"         default = "t265"/>
-    <arg name="publish_odom_tf"     default = "true"/>
-    <arg name="initial_reset"       default = "false"/>
-    <arg name="enable_sync"         default = "true"/>
+    
+    <!-- Intel RealSense T265 Args -->
+    <arg name = "t265_camera"              default = "vo_camera"/>
+    <arg name = "t265_device_type"         default = "t265"/>
+    <arg name = "t265_publish_odom_tf"     default = "true"/>
+    <arg name = "t265_initial_reset"       default = "false"/>
+    <arg name = "t265_enable_sync"         default = "true"/>
 
-    <!-- Astra Pro Args -->
-    <arg name="cam1_name" default="astra0"/>
-    <arg name="cam1_serial_number" default="20101230086" />
-    <arg name="num_orbbec_cameras" default="1" />
-    <arg name="width" default="1280"/>
-    <arg name="height" default="720"/>
-    <arg name="video_device_cam1" default="/dev/video0"/>
+    <!-- VLP-16 Args -->
+    <arg name = "vlp16_device_ip"    default   = "192.168.1.203"/>
+    <arg name = "vlp16_frame_id"     default   = "$(arg t265_camera)_odom_frame"/>
+    <arg name = "vlp16_port"         default   = "2370"/>
+
+    <!-- Intel RealSense L515 Args -->
+    <arg name = "l515_camera"        default = "hand_camera"/>
+    <arg name = "l515_device_type"   default = "l515"/>
+    <arg name = "l515_publish_tf"    default = "false"/>
+    <arg name = "l515_initial_reset" default = "false"/>
+    <arg name = "l515_enable_sync"   default = "false"/>
+    <arg name = "l515_color_height"  default = "-1"/>
+    <arg name = "l515_color_width"   default = "-1"/>
+    <arg name = "l515_color_fps"     default = "-1"/>
+    <arg name = "l515_depth_height"  default = "-1"/>
+    <arg name = "l515_depth_width"   default = "-1"/>
+    <arg name = "l515_depth_fps"     default = "-1"/>
+
+    <!-- Astra Pro1 Args -->
+    <arg name = "astra_front_name"         default = "astra0"/>
+    <arg name = "astra_front_video_device" default = ""/> 
+
+    <arg name = "astra_back_name"         default = "astra1"/>
+    <arg name = "astra_back_video_device" default = ""/>
+
+    <arg name = "astra_width"              default = "1280"/>
+    <arg name = "astra_height"             default = "720"/>
 
     <!-- Intel RealSense T265 Launch -->
     <include file = "$(find zau_bringup)/launch/intel_t265_bringup.launch">
-        <arg     name = "camera"              value = "$(arg t265_camera)"/>
-        <arg     name = "device_type"         default = "t265"/>
-        <arg     name = "publish_odom_tf"     default = "true"/>
-        <arg     name = "initial_reset"       default = "false"/>
-        <arg     name = "enable_sync"         default = "true"/>
+        <arg name = "camera"           value = "$(arg t265_camera)"/>
+        <arg name = "device_type"      value = "$(arg t265_device_type)"/>
+        <arg name = "publish_odom_tf"  value = "$(arg t265_publish_odom_tf)"/>
+        <arg name = "initial_reset"    value = "$(arg t265_initial_reset)"/>
+        <arg name = "enable_sync"      value = "$(arg t265_enable_sync)"/>
     </include>
-
 
     <!-- Intel RealSense L515 Launch -->
     <include file = "$(find zau_bringup)/launch/intel_l515_bringup.launch">
-        <arg     name = "camera" default        = "body_camera"/>
-        <arg     name = "device_type" default   = "l515"/>
-        <arg     name = "publish_tf" default    = "false"/>
-        <arg     name = "initial_reset" default = "true"/>
-        <arg     name = "enable_sync" default   = "true"/>
-        <arg     name = "rviz_config" default   = "real_sense" />
-        <arg     name = "visualize" default     = "false"/>
+       <arg name = "camera"        value = "$(arg l515_camera)"/>
+       <arg name = "device_type"   value = "$(arg l515_device_type)"/>
+       <arg name = "publish_tf"    value = "$(arg l515_publish_tf)"/>
+       <arg name = "initial_reset" value = "$(arg l515_initial_reset)"/>
+       <arg name = "enable_sync"   value = "$(arg l515_enable_sync)"/>
+       <arg name = "color_height"  value = "$(arg l515_color_height)"/>
+       <arg name = "color_width"   value = "$(arg l515_color_width)"/>
+       <arg name = "color_fps"     value = "$(arg l515_color_fps)"/>
+       <arg name = "depth_height"  value = "$(arg l515_depth_height)"/>
+       <arg name = "depth_width"   value = "$(arg l515_depth_width)"/>
+       <arg name = "depth_fps"     value = "$(arg l515_depth_fps)"/>
     </include>
+
+    <!--* For the astras, video device must be provided, because they are always changing -->
+    <!-- Astra Pro Front Body Camera Launch -->
+    <group if="$(eval arg('astra_front_video_device') != '')">
+        <include file = "$(find zau_bringup)/launch/astra_bringup.launch">
+            <arg     name = "cam_name"              value = "$(arg astra_front_name )"/>
+            <arg     name = "cam_video_device"      value = "$(arg astra_front_video_device)"/>
+            <arg     name = "width"                 value = "$(arg astra_width )"/>
+            <arg     name = "height"                value = "$(arg astra_height )"/>
+        </include>
+    </group>   
+
     
-    <!-- Astra Pro Launch -->
-    <include file = "$(find zau_bringup)/launch/astra_bringup.launch">
-        <arg     name = "cam1_name" default          = "astra0"/>
-        <arg     name = "cam1_serial_number" default = "20101230086" />
-        <arg     name = "num_orbbec_cameras" default = "1" />
-        <arg     name = "width" default              = "1280"/>
-        <arg     name = "height" default             = "720"/>
-        <arg     name = "video_device_cam1" default  = "/dev/video0"/>
-        <arg     name = "rviz_config" default        = "astra"/>
+    <!-- Astra Pro Back Body Camera Launch -->
+    <group if="$(eval arg('astra_back_video_device') != '')">
+        <include file = "$(find zau_bringup)/launch/astra_bringup.launch">
+            <arg name = "cam_name"              value = "$(arg astra_back_name )"/>
+            <arg name = "cam_video_device"      value = "$(arg astra_back_video_device)"/>
+            <arg name = "width"                 value = "$(arg astra_width )"/>
+            <arg name = "height"                value = "$(arg astra_height )"/>
+       </include>
+    </group>   
+
+    <!-- VLP-16 Launch -->
+    <include file = "$(find zau_bringup)/launch/VLP16_bringup.launch">
+        <arg name = "device_ip" value = "$(arg vlp16_device_ip)"/>
+        <arg name = "frame_id"  value = "$(arg vlp16_frame_id)"/>
+        <arg name = "port"      value = "$(arg vlp16_port) "/>
     </include>
 
     <!-- RViz Visualization -->

@@ -65,3 +65,26 @@ To run it, please use:
 ```
 roslaunch zau_bringup VLP16_bringup.launch
 ```
+
+# Launching the full system
+
+To launch the full system run :
+
+```
+roslaunch zau_bringup bringup.launch visualize:=true \
+ astra_front_video_device:=/dev/video{device_of_front_astra} \
+ astra_back_video_device:=/dev/video{device_of_back_astra}
+```
+
+If the user doesn't specify the astra's video device, the system will be launched without them. 
+
+To check which video device, run (on the host system if using containers):
+
+```
+v4l2-ctl --list-devices
+```
+
+Usually the lower number video device is the correct one.
+
+This procedure is necessary because whenever a device is unplugged, a different video device will be assigned to it when reconnecting.
+

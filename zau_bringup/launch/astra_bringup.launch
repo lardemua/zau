@@ -1,28 +1,30 @@
 <launch>
-    <arg name="cam1_name" default="astra0"/>
-    <arg name="cam1_serial_number" default="20101230086" />
+    <arg name="cam_name" default="astra0"/>
+    <arg name="cam_serial_number" default="20101230086" />
+    <arg name="cam_video_device" default="/dev/video0"/>
+
     <arg name="num_orbbec_cameras" default="1" />
     <arg name="width" default="1280"/>
     <arg name="height" default="720"/>
-    <arg name="video_device_cam1" default="/dev/video0"/>
     <arg name="rviz_config" default="astra"/>
     <arg name="visualize"           default = "false"/>
 
 
     <!-- FOR RGB IMAGE -->
-
-    <node name="$(arg cam1_name)" pkg="usb_cam" type="usb_cam_node" output="screen">
-        <param name="video_device" value="$(arg video_device_cam1)"/>
-        <param name="camera_name" value="$(arg cam1_name)"/>
+    <node name="$(arg cam_name)" pkg="usb_cam" type="usb_cam_node" output="screen">
+        <param name="camera_name" value="$(arg cam_name)"/>
+        <param name="video_device" value="$(arg cam_video_device)"/>
         <param name="image_width" value="$(arg width)"/>
         <param name="image_height" value="$(arg height)"/>
         <param name="pixel_format" value="mjpeg"/>
-        <param name="camera_frame_id" value="$(arg cam1_name)_optical_frame"/>
+        <param name="camera_frame_id" value="$(arg cam_name)_optical_frame"/>
         <param name="io_method" value="mmap"/>
+        <param name="framerate" value = "25"/> 
     </node>
 
     <!-- FOR DEPTH IMAGE -->
-    <include file="$(find astra_camera)/launch/astra_pro.launch">
+    <!-- ! Disabled, giving too many errors with other sensors -->
+    <!-- <include file="$(find astra_camera)/launch/astra_pro.launch">
         <arg name="camera_name" value="$(arg cam1_name)"/>
         <arg name="enable_point_cloud" value="false"/>
         <arg name="publish_tf" default="false"/>
@@ -35,7 +37,7 @@
         <arg name="serial_number" value="$(arg cam1_serial_number)"/>
         <arg name="device_num" value="$(arg num_orbbec_cameras)"/>
     </include>
-
+ -->
     <group if="$(arg visualize)">
         <node name="rviz" pkg="rviz" type="rviz"
             args="--display-config $(find zau_bringup)/config/$(arg rviz_config).rviz" required="false">
