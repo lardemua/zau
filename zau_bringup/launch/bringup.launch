@@ -10,11 +10,13 @@
     <arg name = "t265_publish_odom_tf"     default = "true"/>
     <arg name = "t265_initial_reset"       default = "false"/>
     <arg name = "t265_enable_sync"         default = "true"/>
+    <arg name = "t265_gyro_fps"            default = "10"/>
+    <arg name = "t265_accel_fps"           default = "10"/>
 
     <!-- VLP-16 Args -->
-    <arg name = "vlp16_device_ip"    default   = "192.168.1.203"/>
-    <arg name = "vlp16_frame_id"     default   = "$(arg t265_camera)_odom_frame"/>
-    <arg name = "vlp16_port"         default   = "2370"/>
+    <arg name = "vlp16_device_ip"    default = "192.168.1.203"/>
+    <arg name = "vlp16_frame_id"     default = "$(arg t265_camera)_odom_frame"/>
+    <arg name = "vlp16_port"         default = "2370"/>
 
     <!-- Intel RealSense L515 Args -->
     <arg name = "l515_camera"        default = "hand_camera"/>
@@ -23,15 +25,34 @@
     <arg name = "l515_initial_reset" default = "false"/>
     <arg name = "l515_enable_sync"   default = "false"/>
 
-    <arg name = "l515_color_width"   default = "1280"/>
-    <arg name = "l515_color_height"  default = "720"/>
+    <!-- Available RGB Resolutions
+        1920x1080 @30/15/6fps
+        1280x720  @60/30/15/6fps
+        960x540   @60/30/15/6fps
+    -->
+    <arg name = "l515_color_width"   default = "1920"/>
+    <arg name = "l515_color_height"  default = "1080"/>
     <arg name = "l515_color_fps"     default = "6"/>
 
-    <arg name = "l515_depth_width"   default = "640"/>
-    <arg name = "l515_depth_height"  default = "480"/>
-    <arg name = "l515_depth_fps"     default = "15"/> 
+    <!-- Available Depth Resolutions
+        640x480@30fps
+        1042x768@30fps
+    -->
+
+    <!-- <arg name = "l515_depth_width"   default = "640"/>
+    <arg name = "l515_depth_height"  default = "480"/> -->
+    <arg name = "l515_depth_width"   default = "1024"/>
+    <arg name = "l515_depth_height"  default = "768"/>
+    <arg name = "l515_depth_fps"     default = "30"/> 
 
     <!-- Astra Pro1 Args -->
+    
+    <!-- Available Resolutions
+    1280x720 @ Any fps up to 30
+    640x480  @ Any fps up to 30
+    320x240  @ Any fps up to 30
+    -->
+
     <arg name = "astra_front_name"         default = "astra0"/>
     <arg name = "astra_front_video_device" default = ""/> 
 
@@ -50,6 +71,8 @@
         <arg name = "publish_odom_tf"  value = "$(arg t265_publish_odom_tf)"/>
         <arg name = "initial_reset"    value = "$(arg t265_initial_reset)"/>
         <arg name = "enable_sync"      value = "$(arg t265_enable_sync)"/>
+        <arg name = "gyro_fps"         value = "$(arg t265_gyro_fps)"/>
+        <arg name = "accel_fps"        value = "$(arg t265_accel_fps)"/>
     </include>
 
     <!-- Intel RealSense L515 Launch -->
@@ -96,6 +119,7 @@
         <arg name = "device_ip" value = "$(arg vlp16_device_ip)"/>
         <arg name = "frame_id"  value = "$(arg vlp16_frame_id)"/>
         <arg name = "port"      value = "$(arg vlp16_port) "/>
+        <arg name = "rpm"       value = "$(arg vlp16_rpm"/>
     </include>
 
     <!-- RViz Visualization -->

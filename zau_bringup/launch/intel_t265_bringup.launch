@@ -6,14 +6,18 @@
     <arg name="enable_sync"         default="true"/>
     <arg name="rviz_config"         default="real_sense" />
     <arg name="visualize"           default="false"/> 
+    <arg name="gyro_fps"            default="-1"/>
+    <arg name="accel_fps"           default="-1"/>
 
 
     <include file = "$(find realsense2_camera)/launch/rs_t265.launch">
-        <arg     name = "camera" value          = "$(arg camera)"/>
-        <arg     name = "device_type" value     = "$(arg device_type)"/>
-        <arg     name = "publish_odom_tf" value = "$(arg publish_odom_tf)"/>
-        <arg     name = "initial_reset" value   = "$(arg initial_reset)"/>
-        <arg     name = "enable_sync" value     = "$(arg enable_sync)"/>
+        <arg name = "camera"          value = "$(arg camera)"/>
+        <arg name = "device_type"     value = "$(arg device_type)"/>
+        <arg name = "publish_odom_tf" value = "$(arg publish_odom_tf)"/>
+        <arg name = "initial_reset"   value = "$(arg initial_reset)"/>
+        <arg name = "enable_sync"     value = "$(arg enable_sync)"/>
+        <arg name = "gyro_fps"        value = "$(arg gyro_fps)"/>
+        <arg name = "accel_fps"       value = "$(arg accel_fps)"/>
     </include>
 
 
