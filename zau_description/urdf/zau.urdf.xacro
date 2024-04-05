@@ -10,13 +10,6 @@
 
     <xacro:property name="M_PI" value="3.1415926535897931" />
 
-    <!-- Tables properties-->
-    <xacro:property name="table_height" value="0.795"/>
-    <xacro:property name="table_width" value=".9"/>
-    <xacro:property name="table_lenght" value="0.9"/>
-    <xacro:property name="table_tabletop_thickness" value="0.015"/>
-    <xacro:property name="table_leg_radius" value="0.02"/>
-
     <!-- Manipulator's args and propperties -->
     <xacro:arg name="joint_limit_params" default="$(find ur_description)/config/ur10e/joint_limits.yaml"/>
     <xacro:arg name="physical_params" default="$(find ur_description)/config/ur10e/physical_parameters.yaml"/>
@@ -28,18 +21,14 @@
     <xacro:arg name="safety_k_position" default="20"/>
 
 
-
     <!-- ####################################### -->
     <!-- Include files-->
     <!-- ####################################### -->
 
-    <!-- Scene objets-->
-    <xacro:include filename="$(find mmtbot_description)/urdf/properties.xacro"/>
-    <xacro:include filename="$(find mmtbot_description)/urdf/table.macro.xacro"/>
-    <xacro:include filename="$(find mmtbot_description)/urdf/tripod.macro.xacro"/>
-
     <!-- Sensors-->
-    <xacro:include filename="$(find mmtbot_description)/urdf/atom_astra.urdf.xacro" />
+    <xacro:include filename="$(find zau_description)/urdf/astra.urdf.xacro" />
+    <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro"/>
+    <xacro:include filename="$(find realsense2_description)/urdf/_l515.urdf.xacro"/>
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
 
     <!-- Manipulator-->
@@ -48,14 +37,6 @@
     <!-- ####################################### -->
     <!-- Declare links and joints -->
     <!-- ####################################### -->
-    <!-- <link name="base_footprint"/> -->
-
-    <!-- Place table 1 in the scene-->
-    <!-- <xacro:table_macro name="table" parent="world" width="${table_width}"
-                       lenght="${table_lenght}" height="${table_height}"
-                       tabletop_thickness="${table_tabletop_thickness}" leg_radius="${table_leg_radius}">
-        <origin xyz="-1 0 0" rpy="0 0 ${M_PI/2}" /> -->
-    <!-- </xacro:table_macro> -->
 
     <!-- Place AGV -->
     <xacro:include filename="$(find zau_description)/urdf/moving_base_odom.urdf.xacro" /> 
@@ -81,24 +62,9 @@
     </joint>
 
 
-    <!-- Place hand camera 1 in the scene-->
-    <xacro:sensor_astra prefix="hand_camera" parent="flange">
-        <origin xyz="-0.02 0.05 0.07" rpy="0 0.0 0" />
-    </xacro:sensor_astra>
-
-    <!-- Place tripod in the scene-->
-    <!-- <xacro:tripod_macro name="tripod" parent="world"> -->
-        <!-- <origin xyz="1 0 0" rpy="0 0 ${2/3*M_PI}" /> -->
-    <!-- </xacro:tripod_macro> -->
-
-    <!-- Put 3d lidar in the scene-->
-    <!-- <xacro:VLP-16 name="lidar" parent="tripod_left_support" topic="/lidar/points"> -->
-        <!-- <origin xyz="0 0 0.001" rpy="0 0 0" /> -->
-    <!-- </xacro:VLP-16> -->
-
-    <!-- Put world camera on top of tripod -->
-    <!-- <xacro:sensor_astra prefix="world_camera" parent="tripod_right_support"> -->
-        <!-- <origin xyz="0.02 0.07 0.015   " rpy="0 0.0 0" /> -->
-    <!-- </xacro:sensor_astra> -->
+    <!-- Place hand camera in the scene-->
+    <xacro:sensor_l515 name="hand_camera" parent="flange">
+        <origin xyz="0.0 0.0 0.07" rpy="0 0.0 0" />
+    </xacro:sensor_l515>
 
 </robot>

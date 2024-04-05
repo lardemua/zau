@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<robot name="sensor_t265" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    <xacro:macro name="sensor_t265" params="parent prefix *origin">
+        <joint name="${prefix}_joint" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="${parent}"/>
+            <child link="${prefix}_link"/>
+        </joint>
+        <link name="${prefix}_link">
+            <inertial>
+            <origin xyz="0.0061266 3.8568E-05 -1.9004E-05" rpy="0 0 0" />
+            <mass value="0.030988" />
+            <inertia ixx="3.0221E-05" ixy="-1.6541E-10" ixz="4.8935E-11" iyy="1.9363E-06" iyz="9.2265E-11" izz="2.9002E-05" />
+            </inertial>
+            <visual>
+            <origin  xyz="0 0 0"  rpy="0 0 ${M_PI}" />
+            <geometry>
+                <mesh filename="package://zau_description/meshes/sensors/t265.STL" />
+            </geometry>
+            </visual>
+            <collision>
+            <origin xyz="0 0 0" rpy="0 0 ${M_PI}" />
+            <geometry>
+                <mesh filename="package://zau_description/meshes/sensors/t265.STL" />
+            </geometry>
+            </collision>
+        </link>
+  </xacro:macro>
+</robot>
