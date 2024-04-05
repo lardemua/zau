@@ -2,76 +2,39 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="zau2">
 
     <!-- properties file -->
-    <xacro:include filename="$(find zau2_real_description)/urdf/properties.xacro"/>
+    <xacro:include filename="$(find zau_description)/urdf/properties.xacro"/>
 
     <xacro:property name="M_PI" value="3.1415926535897931" />
 
     <!-- gazebo.xacro files -->
-    <xacro:include filename="$(find zau2_real_description)/urdf/moving_base_odom.gazebo.xacro"/>
+    <xacro:include filename="$(find zau_description)/urdf/moving_base_odom.gazebo.xacro"/>
 
     <!-- ######################## sensors ######################## -->
-    <!-- velodyne -->
-    <!-- <xacro:arg name="gpu" default="false" />
-    <xacro:property name="gpu" value="$(arg gpu)" />
-    <xacro:arg name="organize_cloud" default="false" />
-    <xacro:property name="organize_cloud" value="$(arg organize_cloud)" />
-
+    <!-- Includes -->
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
-    <xacro:VLP-16 parent="base_link_mb" name="velodyne" topic="/velodyne_points"
-        organize_cloud="${organize_cloud}" hz="10" samples="440" gpu="${gpu}">
-        <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
-    </xacro:VLP-16> -->
+    <xacro:include filename="$(find zau_description)/urdf/astra.urdf.xacro" />
+    <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro" />
 
-    <!-- RGB camera -->
-    <xacro:include filename="$(find zau2_real_description)/urdf/astra.urdf.xacro" />
-    <xacro:sensor_astra parent="base_link_mb" prefix="camera_mb">
+    <!-- Velodyne -->
+    <xacro:VLP-16 parent="base_link_mb" name="lidar3d" topic="/velodyne_points" hz="10" samples="440" gpu="true">
+        <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
+    </xacro:VLP-16>
+
+    <!-- Astra camera -->
+    <xacro:sensor_astra parent="base_link_mb" prefix="front_body_camera">
         <origin xyz="-0.350 0.180 0.870"
             rpy="0 0 3.14" />
     </xacro:sensor_astra>
 
-    <!-- intel realsense camera d415 sensor -->
-    <!-- <xacro:arg name="realsense_enabled" default="$(optenv REALSENSE_ENABLED 1)" />
-    <xacro:arg name="realsense_topic" default="$(optenv REALSENSE_TOPIC realsense)" />
-    <xacro:arg name="realsense_prefix" default="$(optenv REALSENSE_PREFIX camera_realsense)" />
-    <xacro:arg name="realsense_parent" default="$(optenv REALSENSE_PARENT base_link_mb)" />
-    <xacro:arg name="realsense_xyz" default="$(optenv REALSENSE_XYZ 0.350 -0.180 0.850)" />
-    <xacro:arg name="realsense_rpy" default="$(optenv REALSENSE_RPY 0 0 0)" /> -->
+    <xacro:sensor_astra parent="base_link_mb" prefix="back_body_camera">
+        <origin xyz="0.350 0.180 0.825"
+            rpy="0 0 0" />
+    </xacro:sensor_astra>
 
-    <!-- <material name="white">
-        <color rgba="1.0 1.0 1.0 1.0" />
-    </material> -->
-
-    <!-- <xacro:include filename="$(find zau2_real_description)/urdf/realsense/intel_realsense.urdf.xacro" />
-    <xacro:if value="$(arg realsense_enabled)">
-        <link name="$(arg realsense_prefix)_realsense_mountpoint" />
-        <joint name="$(arg realsense_prefix)_realsense_mountpoint_joint" type="fixed">
-            <origin xyz="$(arg realsense_xyz)" rpy="$(arg realsense_rpy)" />
-            <parent link="$(arg realsense_parent)" />
-            <child link="$(arg realsense_prefix)_realsense_mountpoint" />
-        </joint>
-        <xacro:intel_realsense_mount prefix="$(arg realsense_prefix)" topic="$(arg realsense_topic)"
-            parent_link="$(arg realsense_prefix)_realsense_mountpoint" />
-    </xacro:if> -->
-
-    <!-- add intel realsense l515 camera -->
-    <!-- <xacro:arg name="use_nominal_extrinsics" default="false" />
-    <xacro:arg name="add_plug" default="false" />
-    <xacro:arg name="use_mesh" default="true" />
-    <xacro:include filename="$(find zau2_real_description)/urdf/realsense/_l515.urdf.xacro" />
-
-    <xacro:sensor_l515 parent="base_link_mb" use_nominal_extrinsics="$(arg use_nominal_extrinsics)"
-        add_plug="$(arg add_plug)" use_mesh="$(arg use_mesh)">
-        <origin xyz="0.350 0.180 0.850" rpy="0 0 0" />
-    </xacro:sensor_l515> -->
-
-    <!-- add intel realsense t265 -->
-    <!-- <xacro:include filename="$(find realsense_ros_gazebo)/xacro/tracker.xacro" />
-
-    <xacro:realsense_T265 sensor_name="camera_t265" parent_link="base_link_mb" rate="30.0">
-        <origin rpy="0 0 0" xyz="0.350 0.060 0.860" />
-    </xacro:realsense_T265> -->
-
-
+    <xacro:sensor_t265 parent="base_link_mb" prefix="left_body_camera">
+        <origin xyz="0.300 -0.300 0.825"
+            rpy="0 0 ${-M_PI/2}" />
+    </xacro:sensor_t265>
 
     <!-- ######################## the actual robot ######################## -->
     <!-- world link -->
@@ -89,7 +52,7 @@
         <visual>
             <origin xyz="-0.43 -0.33 0.03" rpy="1.57 0 1.57" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/moving_base/moving_base.STL" scale="0.001 0.001 0.001" />
+                <mesh filename="package://zau_description/meshes/moving_base/moving_base.STL" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="light_black" />
         </visual>
@@ -128,7 +91,7 @@
         <visual>
             <origin xyz="0 0 -0.055" rpy="-1.57 0 0" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/wheels/left_tire.stl"
+                <mesh filename="package://zau_description/meshes/robot_wheels/left_tire.stl"
                     scale="0.0025 0.0025 0.0025" />
             </geometry>
             <material name="dark" />
@@ -159,7 +122,7 @@
         <visual>
             <origin xyz="0 0 0.055" rpy="1.57 0 0" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/wheels/left_tire.stl"
+                <mesh filename="package://zau_description/meshes/robot_wheels/left_tire.stl"
                     scale="0.0025 0.0025 0.0025" />
             </geometry>
             <material name="dark" />
@@ -190,7 +153,7 @@
         <visual>
             <origin xyz="0.027 -0.06 0" rpy="1.57 0 0" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/wheels/left_tire.stl"
+                <mesh filename="package://zau_description/meshes/robot_wheels/left_tire.stl"
                     scale="0.0020 0.0020 0.0020" />
             </geometry>
             <material name="dark" />
@@ -222,7 +185,7 @@
         <visual>
             <origin xyz="0.027 -0.06 0" rpy="-1.57 0 0" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/wheels/left_tire.stl"
+                <mesh filename="package://zau_description/meshes/robot_wheels/left_tire.stl"
                     scale="0.0020 0.0020 0.0020" />
             </geometry>
             <material name="dark" />
@@ -255,7 +218,7 @@
         <visual>
             <origin xyz="0 -0.06 0" rpy="1.57 0 0" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/wheels/left_tire.stl"
+                <mesh filename="package://zau_description/meshes/robot_wheels/left_tire.stl"
                     scale="0.0020 0.0020 0.0020" />
             </geometry>
             <material name="dark" />
@@ -287,7 +250,7 @@
         <visual>
             <origin xyz="0 -0.06 0" rpy="-1.57 0 0" />
             <geometry>
-                <mesh filename="package://zau2_real_description/meshes/wheels/left_tire.stl"
+                <mesh filename="package://zau_description/meshes/robot_wheels/left_tire.stl"
                     scale="0.0020 0.0020 0.0020" />
             </geometry>
             <material name="dark" />
