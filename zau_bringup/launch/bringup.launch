@@ -53,10 +53,10 @@
     320x240  @ Any fps up to 30
     -->
 
-    <arg name = "astra_front_name"         default = "astra0"/>
+    <arg name = "astra_front_name"         default = "rgb_body_front"/>
     <arg name = "astra_front_video_device" default = ""/> 
 
-    <arg name = "astra_back_name"         default = "astra1"/>
+    <arg name = "astra_back_name"         default = "rgb_body_back"/>
     <arg name = "astra_back_video_device" default = ""/>
 
     <arg name = "astra_width"              default = "1280"/>
