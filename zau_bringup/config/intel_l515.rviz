@@ -71,7 +71,7 @@ Visualization Manager:
       Zoom Factor: 1
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /hand_camera/color/image_raw
+      Image Topic: /rgbd_hand/color/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -99,7 +99,7 @@ Visualization Manager:
           Value: true
         Value: false
       Enabled: true
-      Image Topic: /hand_camera/depth/image_rect_raw
+      Image Topic: /rgbd_hand/depth/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
