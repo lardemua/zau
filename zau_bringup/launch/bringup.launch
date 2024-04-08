@@ -19,7 +19,7 @@
     <arg name = "vlp16_port"         default = "2370"/>
 
     <!-- Intel RealSense L515 Args -->
-    <arg name = "l515_camera"        default = "hand_camera"/>
+    <arg name = "l515_camera"        default = "rgbd_hand"/>
     <arg name = "l515_device_type"   default = "l515"/>
     <arg name = "l515_publish_tf"    default = "false"/>
     <arg name = "l515_initial_reset" default = "false"/>
@@ -53,10 +53,10 @@
     320x240  @ Any fps up to 30
     -->
 
-    <arg name = "astra_front_name"         default = "astra0"/>
+    <arg name = "astra_front_name"         default = "rgb_body_front"/>
     <arg name = "astra_front_video_device" default = ""/> 
 
-    <arg name = "astra_back_name"         default = "astra1"/>
+    <arg name = "astra_back_name"         default = "rgb_body_back"/>
     <arg name = "astra_back_video_device" default = ""/>
 
     <arg name = "astra_width"              default = "1280"/>

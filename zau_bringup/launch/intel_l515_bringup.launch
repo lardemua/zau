@@ -1,5 +1,5 @@
 <launch>
-    <arg name="camera" default="hand_camera"/>
+    <arg name="camera" default="rgbd_hand"/>
     <arg name="device_type" default="l515"/>
     <arg name="publish_tf" default="false"/>
     <arg name="initial_reset" default="true"/>
