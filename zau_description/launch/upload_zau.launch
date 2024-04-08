@@ -2,4 +2,7 @@
 <launch>
     <arg name="description_file" default="zau.urdf.xacro"/> 
     <param name="robot_description" command="xacro '$(find zau_description)/urdf/$(arg description_file)'" />
+
+    <!-- Robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
 </launch>
