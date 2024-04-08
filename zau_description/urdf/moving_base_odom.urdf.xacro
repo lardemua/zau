@@ -12,7 +12,6 @@
     <!-- ######################## sensors ######################## -->
     <!-- Includes -->
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
-    <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro" />
     <xacro:include filename="$(find zau_description)/urdf/rgb_camera.urdf.xacro" />
     
     <!-- Velodyne -->
@@ -41,21 +40,6 @@
         </color_rgb_rviz>
     </xacro:rgb_camera>
     
-    <!-- <xacro:sensor_astra parent="base_link_mb" prefix="front_body_camera"> -->
-        <!-- <origin xyz="-0.350 0.180 0.870" -->
-            <!-- rpy="0 0 3.14" /> -->
-    <!-- </xacro:sensor_astra> -->
-<!--  -->
-    <!-- <xacro:sensor_astra parent="base_link_mb" prefix="back_body_camera"> -->
-        <!-- <origin xyz="0.350 0.180 0.825" -->
-            <!-- rpy="0 0 0" /> -->
-    <!-- </xacro:sensor_astra> -->
-<!--  -->
-    <!-- <xacro:sensor_t265 parent="base_link_mb" prefix="left_body_camera"> -->
-        <!-- <origin xyz="0.300 -0.300 0.825" -->
-            <!-- rpy="0 0 ${-M_PI/2}" /> -->
-    <!-- </xacro:sensor_t265> -->
-
     <!-- ######################## the actual robot ######################## -->
     <!-- world link -->
     <link name="base_footprint" />

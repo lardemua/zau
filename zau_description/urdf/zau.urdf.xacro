@@ -26,8 +26,6 @@
     <!-- ####################################### -->
 
     <!-- Sensors-->
-    
-    <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro"/>
     <xacro:include filename="$(find realsense2_description)/urdf/_l515.urdf.xacro"/>
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
 

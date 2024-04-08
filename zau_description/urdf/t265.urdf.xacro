@@ -2,11 +2,6 @@
 <robot name="sensor_t265" xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:property name="M_PI" value="3.1415926535897931" />
     <xacro:macro name="sensor_t265" params="parent prefix *origin">
-        <joint name="${prefix}_joint" type="fixed">
-            <xacro:insert_block name="origin"/>
-            <parent link="${parent}"/>
-            <child link="${prefix}_link"/>
-        </joint>
         <link name="${prefix}_link">
             <inertial>
             <origin xyz="0.0061266 3.8568E-05 -1.9004E-05" rpy="0 0 0" />
@@ -27,4 +22,7 @@
             </collision>
         </link>
   </xacro:macro>
+
+  <xacro:sensor_t265 prefix="vo_body"/>
+  
 </robot>
