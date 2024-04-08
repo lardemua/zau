@@ -51,8 +51,8 @@ To use the Velodyne Puck, please configure your ethernet connection, in this cas
 
 ```
 sudo ifconfig eth0 192.168.3.100
-sudo route add 192.168.1.203 eth0
 ```
+<!-- sudo route add 192.168.1.203 eth0 -->
 
 and by installing:
 

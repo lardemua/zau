@@ -16,7 +16,7 @@
     <xacro:include filename="$(find zau_description)/urdf/rgb_camera.urdf.xacro" />
     
     <!-- Velodyne -->
-    <xacro:VLP-16 parent="base_link_mb" name="lidar3d" topic="/velodyne_points" hz="10" samples="440" gpu="true">
+    <xacro:VLP-16 parent="base_link_mb" name="lidar_body" topic="/velodyne_points" hz="10" samples="440" gpu="true">
         <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
     </xacro:VLP-16>
 

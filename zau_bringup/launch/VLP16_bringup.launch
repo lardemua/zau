@@ -1,10 +1,12 @@
 <launch>
     <arg name="device_ip" default="192.168.1.203"/>
-    <arg name="frame_id" default="lidar3d"/>
+    <arg name="frame_id" default="lidar_body"/> 
     <arg name="port" default="2370"/>
     <arg name="rviz_config" default="velodyne"/>
     <arg name="visualize" default="false"/>
     <arg name="rpm" default="600.0"/>
+
+    <remap from="/velodyne_points" to="/lidar_body/points"/>
 
 
     <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">

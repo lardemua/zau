@@ -5,7 +5,7 @@
 
     
     <!-- Intel RealSense T265 Args -->
-    <arg name = "t265_camera"              default = "vo_camera"/>
+    <arg name = "t265_camera"              default = "vo_body_camera"/>
     <arg name = "t265_device_type"         default = "t265"/>
     <arg name = "t265_publish_odom_tf"     default = "true"/>
     <arg name = "t265_initial_reset"       default = "false"/>
