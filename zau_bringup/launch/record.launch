@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <launch>
         <arg name="bag" default="/tmp/tmp.bag"/>
-<!--        <param name="/use_sim_time" value="false"/>-->
 
         <!--To record only raw data-->
         <!-- http://wiki.ros.org/openni_launch/Tutorials/BagRecordingPlayback-->
@@ -9,16 +8,16 @@
         /tf
         /tf_static
         /joint_states
-        /astra0/camera_info
-        /astra0/image_raw/compressed
-        /astra1/camera_info
-        /astra1/image_raw/compressed
-        /hand_camera/color/camera_info
-        /hand_camera/color/image_raw/compressed
-        /hand_camera/depth/camera_info
-        /hand_camera/depth/image_rect_raw/compressed
+        /rgb_body_front/camera_info
+        /rgb_body_front/image_raw/compressed
+        /rgb_body_back/camera_info
+        /rgb_body_back/image_raw/compressed
+        /rgbd_hand_camera/color/camera_info
+        /rgbd_hand_camera/color/image_raw/compressed
+        /rgbd_hand_camera/depth/camera_info
+        /rgbd_hand_camera/depth/image_raw/compressed
         /velodyne_points
-        /vo_camera/odom/sample
+        /vo_body_camera/odom/sample
         -o $(arg bag)">
         </node>
 </launch>

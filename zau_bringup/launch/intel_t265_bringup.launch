@@ -1,5 +1,5 @@
 <launch>
-    <arg name="camera"              default="vo_camera"/>
+    <arg name="camera"              default="vo_body_camera"/>
     <arg name="device_type"         default="t265"/>
     <arg name="publish_odom_tf"     default="true"/>
     <arg name="initial_reset"       default="false"/>

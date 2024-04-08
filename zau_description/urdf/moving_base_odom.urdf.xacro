@@ -16,7 +16,7 @@
     <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro" />
 
     <!-- Velodyne -->
-    <xacro:VLP-16 parent="base_link_mb" name="lidar3d" topic="/velodyne_points" hz="10" samples="440" gpu="true">
+    <xacro:VLP-16 parent="base_link_mb" name="lidar_body" topic="/velodyne_points" hz="10" samples="440" gpu="true">
         <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
     </xacro:VLP-16>
 
@@ -31,7 +31,7 @@
             rpy="0 0 0" />
     </xacro:sensor_astra>
 
-    <xacro:sensor_t265 parent="base_link_mb" prefix="left_body_camera">
+    <xacro:sensor_t265 parent="base_link_mb" prefix="vo_body_camera">
         <origin xyz="0.300 -0.300 0.825"
             rpy="0 0 ${-M_PI/2}" />
     </xacro:sensor_t265>
