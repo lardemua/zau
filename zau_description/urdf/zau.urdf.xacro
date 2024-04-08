@@ -26,7 +26,7 @@
     <!-- ####################################### -->
 
     <!-- Sensors-->
-    <xacro:include filename="$(find zau_description)/urdf/astra.urdf.xacro" />
+    
     <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro"/>
     <xacro:include filename="$(find realsense2_description)/urdf/_l515.urdf.xacro"/>
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
@@ -66,5 +66,7 @@
     <xacro:sensor_l515 name="hand_camera" parent="flange">
         <origin xyz="0.0 0.0 0.07" rpy="0 0.0 0" />
     </xacro:sensor_l515>
+
+    
 
 </robot>

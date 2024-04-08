@@ -12,29 +12,49 @@
     <!-- ######################## sensors ######################## -->
     <!-- Includes -->
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
-    <xacro:include filename="$(find zau_description)/urdf/astra.urdf.xacro" />
     <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro" />
-
+    <xacro:include filename="$(find zau_description)/urdf/rgb_camera.urdf.xacro" />
+    
     <!-- Velodyne -->
     <xacro:VLP-16 parent="base_link_mb" name="lidar3d" topic="/velodyne_points" hz="10" samples="440" gpu="true">
         <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
     </xacro:VLP-16>
 
     <!-- Astra camera -->
-    <xacro:sensor_astra parent="base_link_mb" prefix="front_body_camera">
-        <origin xyz="-0.350 0.180 0.870"
-            rpy="0 0 3.14" />
-    </xacro:sensor_astra>
+    <!-- RGB Body Front Camera -->
+    <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_front" color_gazebo="Red">
+        <origin xyz="-0.350 0.180 0.870" rpy="0 0 3.14" />
+        <color_rgb_rviz>
+            <material name="red">
+                <color rgba="0.9 0 0 1" />
+            </material>
+        </color_rgb_rviz>
+    </xacro:rgb_camera>
 
-    <xacro:sensor_astra parent="base_link_mb" prefix="back_body_camera">
-        <origin xyz="0.350 0.180 0.825"
-            rpy="0 0 0" />
-    </xacro:sensor_astra>
-
-    <xacro:sensor_t265 parent="base_link_mb" prefix="left_body_camera">
-        <origin xyz="0.300 -0.300 0.825"
-            rpy="0 0 ${-M_PI/2}" />
-    </xacro:sensor_t265>
+    <!-- RGB Body Back Camera -->
+    <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_back" color_gazebo="Green">
+        <origin xyz="0.350 0.180 0.825" rpy="0 0 0" />
+        <color_rgb_rviz>
+            <material name="green">
+                <color rgba="0 0.9 0 1" />
+            </material>
+        </color_rgb_rviz>
+    </xacro:rgb_camera>
+    
+    <!-- <xacro:sensor_astra parent="base_link_mb" prefix="front_body_camera"> -->
+        <!-- <origin xyz="-0.350 0.180 0.870" -->
+            <!-- rpy="0 0 3.14" /> -->
+    <!-- </xacro:sensor_astra> -->
+<!--  -->
+    <!-- <xacro:sensor_astra parent="base_link_mb" prefix="back_body_camera"> -->
+        <!-- <origin xyz="0.350 0.180 0.825" -->
+            <!-- rpy="0 0 0" /> -->
+    <!-- </xacro:sensor_astra> -->
+<!--  -->
+    <!-- <xacro:sensor_t265 parent="base_link_mb" prefix="left_body_camera"> -->
+        <!-- <origin xyz="0.300 -0.300 0.825" -->
+            <!-- rpy="0 0 ${-M_PI/2}" /> -->
+    <!-- </xacro:sensor_t265> -->
 
     <!-- ######################## the actual robot ######################## -->
     <!-- world link -->
