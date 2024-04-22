@@ -16,13 +16,13 @@
     
     <!-- Velodyne -->
     <xacro:VLP-16 parent="base_link_mb" name="lidar_body" topic="/velodyne_points" hz="10" samples="440" gpu="true">
-        <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
+        <origin xyz="0.420 0.0 0.785" rpy="0 0 0" />
     </xacro:VLP-16>
 
     <!-- Astra camera -->
     <!-- RGB Body Front Camera -->
     <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_front" color_gazebo="Red">
-        <origin xyz="-0.350 0.180 0.870" rpy="0 0 3.14" />
+        <origin xyz="0.420 -0.180 0.785" rpy="0 0 0" />
         <color_rgb_rviz>
             <material name="red">
                 <color rgba="0.9 0 0 1" />
@@ -32,7 +32,7 @@
 
     <!-- RGB Body Back Camera -->
     <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_back" color_gazebo="Green">
-        <origin xyz="0.350 0.180 0.825" rpy="0 0 0" />
+        <origin xyz="0.420 0.180 0.785" rpy="0 0 0" />
         <color_rgb_rviz>
             <material name="green">
                 <color rgba="0 0.9 0 1" />
