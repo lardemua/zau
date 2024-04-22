@@ -8,10 +8,10 @@
         /tf
         /tf_static
         /joint_states
-        /rgb_body_front/camera_info
-        /rgb_body_front/image_raw/compressed
-        /rgb_body_back/camera_info
-        /rgb_body_back/image_raw/compressed
+        /rgb_body_right/camera_info
+        /rgb_body_right/image_raw/compressed
+        /rgb_body_left/camera_info
+        /rgb_body_left/image_raw/compressed
         /rgbd_hand_camera/color/camera_info
         /rgbd_hand_camera/color/image_raw/compressed
         /rgbd_hand_camera/depth/camera_info

@@ -53,11 +53,11 @@
     320x240  @ Any fps up to 30
     -->
 
-    <arg name = "astra_front_name"         default = "rgb_body_front"/>
-    <arg name = "astra_front_video_device" default = ""/> 
+    <arg name = "astra_right_name"         default = "rgb_body_right"/>
+    <arg name = "astra_right_video_device" default = ""/> 
 
-    <arg name = "astra_back_name"         default = "rgb_body_back"/>
-    <arg name = "astra_back_video_device" default = ""/>
+    <arg name = "astra_left_name"         default = "rgb_body_left"/>
+    <arg name = "astra_left_video_device" default = ""/>
 
     <arg name = "astra_width"              default = "1280"/>
     <arg name = "astra_height"             default = "720"/>
@@ -91,11 +91,11 @@
     </include>
 
     <!--* For the astras, video device must be provided, because they are always changing -->
-    <!-- Astra Pro Front Body Camera Launch -->
-    <group if="$(eval arg('astra_front_video_device') != '')">
+    <!-- Astra Pro Right Body Camera Launch -->
+    <group if="$(eval arg('astra_right_video_device') != '')">
         <include file = "$(find zau_bringup)/launch/astra_bringup.launch">
-            <arg name = "cam_name"              value = "$(arg astra_front_name )"/>
-            <arg name = "cam_video_device"      value = "$(arg astra_front_video_device)"/>
+            <arg name = "cam_name"              value = "$(arg astra_right_name )"/>
+            <arg name = "cam_video_device"      value = "$(arg astra_right_video_device)"/>
             <arg name = "width"                 value = "$(arg astra_width )"/>
             <arg name = "height"                value = "$(arg astra_height )"/>
             <arg name = "framerate"             value = "$(arg astra_framerate )"/>
@@ -103,11 +103,11 @@
     </group>   
 
     
-    <!-- Astra Pro Back Body Camera Launch -->
+    <!-- Astra Pro Left Body Camera Launch -->
     <group if="$(eval arg('astra_back_video_device') != '')">
         <include file = "$(find zau_bringup)/launch/astra_bringup.launch">
-            <arg name = "cam_name"              value = "$(arg astra_back_name )"/>
-            <arg name = "cam_video_device"      value = "$(arg astra_back_video_device)"/>
+            <arg name = "cam_name"              value = "$(arg astra_left_name )"/>
+            <arg name = "cam_video_device"      value = "$(arg astra_left_video_device)"/>
             <arg name = "width"                 value = "$(arg astra_width )"/>
             <arg name = "height"                value = "$(arg astra_height )"/>
             <arg name = "framerate"             value = "$(arg astra_framerate )"/>
