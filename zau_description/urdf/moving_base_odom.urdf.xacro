@@ -22,7 +22,7 @@
     <!-- Astra camera -->
     <!-- RGB Body Right Camera -->
     <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_right" color_gazebo="Red">
-        <origin xyz="0.420 -0.180 0.785" rpy="0 0 0" />
+        <origin xyz="0.420 -0.180 0.785" rpy="0 0 -${pi/4}" />
         <color_rgb_rviz>
             <material name="red">
                 <color rgba="0.9 0 0 1" />
