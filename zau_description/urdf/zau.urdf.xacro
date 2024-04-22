@@ -56,12 +56,12 @@
     <joint name="moving_base_to_ur5" type="fixed">
         <parent link="base_link_mb" />
         <child link = "base_link"/>
-        <origin xyz="-0.296 0 0.826" rpy="0.0 0.0 ${M_PI/4}" />
+        <origin xyz="-0.296 0 0.785" rpy="0.0 0.0 ${M_PI/4}" />
     </joint>
 
 
     <!-- Place hand camera in the scene-->
-    <xacro:sensor_l515 name="rgbd_hand" parent="flange">
+    <xacro:sensor_l515 name="rgbd_hand" parent="flange" use_nominal_extrinsics="true" >
         <origin xyz="0.0 0.0 -0.02" rpy="0 0.0 0" />
     </xacro:sensor_l515>
 
