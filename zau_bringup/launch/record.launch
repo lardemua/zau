@@ -12,7 +12,7 @@
         /rgbd_hand/color/image_raw/compressed
         /rgbd_hand/depth/camera_info
         /rgbd_hand/depth/image_raw
-        /lidar/points
+        /lidar_body/points
         /vo_body/accel/imu_info
         /vo_body/accel/metadata
         /vo_body/accel/sample
