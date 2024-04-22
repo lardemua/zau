@@ -35,11 +35,11 @@
 description_file: "package://zau_description/urdf/zau.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-bag_file: "$ROS_BAGS/zau/inesc_day1_1_cropped.bag"
+bag_file: "$ROS_BAGS/zau/inesc_day1_1_cropped_renamed.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
-world_link: "base_footprint"
+world_link: "world"
 
 # ATOM will calibrate the extrinsic parameters of your sensors.
 # In this section you should discriminate the sensors that will be part of the calibrations.
