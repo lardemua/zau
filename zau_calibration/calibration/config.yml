@@ -35,7 +35,7 @@
 description_file: "package://zau_description/urdf/zau.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-bag_file: "$ROS_BAGS/zau/inesc_day1_1_cropped_renamed.bag"
+bag_file: "$ROS_BAGS/zau/inesc_day1_1_cropped_renamed_without_splits.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
@@ -70,7 +70,7 @@ sensors:
   #   /world_camera/rgb/image_raw
   #
 
-  rgbd_color_hand:
+  rgbd_hand_color:
     link: "rgbd_hand_color_optical_frame"
     parent_link: "rgbd_hand_link"
     child_link: "rgbd_hand_color_frame"
@@ -78,7 +78,7 @@ sensors:
     modality: "rgb"
     throttle: 10
 
-  rgbd_depth_hand:
+  rgbd_hand_depth:
     link: "rgbd_hand_depth_optical_frame"
     parent_link: "rgbd_hand_link"
     child_link: "rgbd_hand_depth_frame"
