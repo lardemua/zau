@@ -7,6 +7,7 @@
         <node name="rosbag_record" pkg="rosbag" type="record" output="screen" args="
         /tf
         /tf_static
+        /zau/odom
         /joint_states
         /rgbd_hand/color/camera_info
         /rgbd_hand/color/image_raw/compressed
@@ -25,8 +26,6 @@
         /vo_body/fisheye1/image_raw/compressed
         /vo_body/fisheye2/camera_info
         /vo_body/fisheye2/image_raw/compressed
-
-
         /rgb_body_right/camera_info
         /rgb_body_right/image_raw/compressed
         /rgb_body_left/camera_info
