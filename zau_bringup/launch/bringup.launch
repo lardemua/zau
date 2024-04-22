@@ -1,21 +1,27 @@
 <launch>
     <!-- Global Args -->
-    <arg name="rviz_config"         default = "real_sense" />
+    <arg name="rviz_config"         default = "zau" />
     <arg name="visualize"           default = "false"/>
 
     
     <!-- Intel RealSense T265 Args -->
-    <arg name = "t265_camera"              default = "vo_body_camera"/>
+    <arg name = "t265_camera"              default = "vo_body"/>
     <arg name = "t265_device_type"         default = "t265"/>
     <arg name = "t265_publish_odom_tf"     default = "true"/>
     <arg name = "t265_initial_reset"       default = "false"/>
     <arg name = "t265_enable_sync"         default = "true"/>
     <arg name = "t265_gyro_fps"            default = "10"/>
     <arg name = "t265_accel_fps"           default = "10"/>
+    <arg name="fisheye_width"       default="-1"/> 
+    <arg name="fisheye_height"      default="-1"/>
+    <arg name="enable_fisheye1"     default="true"/>
+    <arg name="enable_fisheye2"     default="true"/>
+
 
     <!-- VLP-16 Args -->
-    <arg name = "vlp16_device_ip"    default = "192.168.1.203"/>
-    <arg name = "vlp16_frame_id"     default = "$(arg t265_camera)_odom_frame"/>
+    <!-- <arg name = "vlp16_device_ip"    default = "192.168.1.203"/> -->
+    <arg name = "vlp16_device_ip"    default = "172.16.31.121"/>
+    <arg name = "vlp16_frame_id"     default = "lidar_body"/>
     <arg name = "vlp16_port"         default = "2370"/>
 
     <!-- Intel RealSense L515 Args -->
@@ -61,7 +67,15 @@
 
     <arg name = "astra_width"              default = "1280"/>
     <arg name = "astra_height"             default = "720"/>
-    <arg name = "astra_framerate"          default = "5"/>
+    <arg name = "astra_framerate"          default = "30"/>
+    <!-- <arg name = "astra_framerate"          default = "5"/> -->
+
+
+
+    <!-- Zau Description -->
+    <include file="$(find zau_description)/launch/upload_zau.launch"/>
+    <!-- T265 Description -->
+    <!-- <include file="$(find zau_description)/launch/upload_t265.launch"/> -->
 
 
     <!-- Intel RealSense T265 Launch -->

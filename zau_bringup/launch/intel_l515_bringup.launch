@@ -1,17 +1,20 @@
 <launch>
-    <arg name="camera" default="rgbd_hand"/>
-    <arg name="device_type" default="l515"/>
-    <arg name="publish_tf" default="false"/>
-    <arg name="initial_reset" default="true"/>
-    <arg name="enable_sync" default="false"/>
-    <arg name="rviz_config" default="intel_l515" />
-    <arg name="visualize" default="false"/>
-    <arg name="color_height" default="-1"/>
-    <arg name="color_width" default="-1"/>
-    <arg name="color_fps" default="-1"/>
-    <arg name="depth_height" default="-1"/>
-    <arg name="depth_width" default="-1"/>
-    <arg name="depth_fps" default="-1"/>
+    <arg name = "camera"         default = "rgbd_hand"/>
+    <arg name = "device_type"    default = "l515"/>
+    <arg name = "publish_tf"     default = "false"/>
+    <arg name = "initial_reset"  default = "true"/>
+    <arg name = "enable_sync"    default = "false"/>
+    <arg name = "rviz_config"    default = "intel_l515" />
+    <arg name = "visualize"      default = "false"/>
+    <arg name = "color_width"    default = "1920"/>
+    <arg name = "color_height"   default = "1080"/>
+    <arg name = "color_fps"      default = "30"/>
+    <arg name = "depth_width"    default = "1024"/>
+    <arg name = "depth_height"   default = "768"/>
+    <arg name = "depth_fps"      default = "30"/>
+    <arg name = "infra_height"   default = "768"/>
+    <arg name = "infra_width"    default = "1024"/>
+    <arg name = "enable_infra"   default = "false"/>
 
     <remap from="/$(arg camera)/depth/image_rect_raw" to="/$(arg camera)/depth/image_raw"/>
 
@@ -27,6 +30,9 @@
         <arg name="depth_height" value="$(arg depth_height)"/>
         <arg name="depth_width" value="$(arg depth_width)"/>
         <arg name="depth_fps" value="$(arg depth_fps)"/>
+        <arg name="infra_height" value="$(arg infra_height)"/>
+        <arg name="infra_width" value="$(arg infra_width)"/>
+        <arg name="enable_infra" value="$(arg enable_infra)"/>
     </include>
 
 

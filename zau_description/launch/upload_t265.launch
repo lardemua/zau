@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="description_file" default="t265.urdf.xacro"/> 
+    <param name="vo_description" command="xacro '$(find zau_description)/urdf/$(arg description_file)'" />
+
+    <!-- Robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="vo_state_publisher" >
+        <param name="robot_description" value="vo_description"/>
+    </node>
+</launch>

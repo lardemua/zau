@@ -1,5 +1,5 @@
 <launch>
-    <arg name="camera"              default="vo_body_camera"/>
+    <arg name="camera"              default="vo_body"/>
     <arg name="device_type"         default="t265"/>
     <arg name="publish_odom_tf"     default="true"/>
     <arg name="initial_reset"       default="false"/>
@@ -8,6 +8,11 @@
     <arg name="visualize"           default="false"/> 
     <arg name="gyro_fps"            default="-1"/>
     <arg name="accel_fps"           default="-1"/>
+
+    <arg name="fisheye_width"       default="-1"/> 
+    <arg name="fisheye_height"      default="-1"/>
+    <arg name="enable_fisheye1"     default="true"/>
+    <arg name="enable_fisheye2"     default="true"/>
 
 
     <include file = "$(find realsense2_camera)/launch/rs_t265.launch">
@@ -18,6 +23,10 @@
         <arg name = "enable_sync"     value = "$(arg enable_sync)"/>
         <arg name = "gyro_fps"        value = "$(arg gyro_fps)"/>
         <arg name = "accel_fps"       value = "$(arg accel_fps)"/>
+        <arg name="fisheye_width"     value = "$(arg fisheye_width)"/> 
+        <arg name="fisheye_height"    value = "$(arg fisheye_height)"/>
+        <arg name="enable_fisheye1"   value = "$(arg enable_fisheye1)"/>
+        <arg name="enable_fisheye2"   value = "$(arg enable_fisheye2)"/>
     </include>
 
 

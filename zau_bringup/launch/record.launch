@@ -12,12 +12,27 @@
         /rgb_body_front/image_raw/compressed
         /rgb_body_back/camera_info
         /rgb_body_back/image_raw/compressed
-        /rgbd_hand_camera/color/camera_info
-        /rgbd_hand_camera/color/image_raw/compressed
-        /rgbd_hand_camera/depth/camera_info
-        /rgbd_hand_camera/depth/image_raw/compressed
-        /velodyne_points
-        /vo_body_camera/odom/sample
+        /rgbd_hand/color/camera_info
+        /rgbd_hand/color/image_raw/compressed
+        /rgbd_hand/depth/camera_info
+        /rgbd_hand/depth/image_raw
+        /lidar/points
+        /vo_body/accel/imu_info
+        /vo_body/accel/metadata
+        /vo_body/accel/sample
+        /vo_body/gyro/imu_info
+        /vo_body/gyro/metadata
+        /vo_body/gyro/sample
+        /vo_body/odom/metadata
+        /vo_body/odom/sample
+        /vo_body/fisheye1/camera_info
+        /vo_body/fisheye1/image_raw/compressed
+        /vo_body/fisheye2/camera_info
+        /vo_body/fisheye2/image_raw/compressed
+
+
         -o $(arg bag)">
         </node>
 </launch>
+
+        <!-- /rgbd_hand/depth/image_raw/compressed -->
