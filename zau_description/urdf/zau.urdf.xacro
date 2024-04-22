@@ -11,10 +11,10 @@
     <xacro:property name="M_PI" value="3.1415926535897931" />
 
     <!-- Manipulator's args and propperties -->
-    <xacro:arg name="joint_limit_params" default="$(find ur_description)/config/ur10e/joint_limits.yaml"/>
-    <xacro:arg name="physical_params" default="$(find ur_description)/config/ur10e/physical_parameters.yaml"/>
-    <xacro:arg name="kinematics_params" default="$(find ur_description)/config/ur10e/default_kinematics.yaml"/>
-    <xacro:arg name="visual_params" default="$(find ur_description)/config/ur10e/visual_parameters.yaml"/>
+    <xacro:arg name="joint_limit_params" default="$(find ur_description)/config/ur5/joint_limits.yaml"/>
+    <xacro:arg name="physical_params" default="$(find ur_description)/config/ur5/physical_parameters.yaml"/>
+    <xacro:arg name="kinematics_params" default="$(find ur_description)/config/ur5/default_kinematics.yaml"/>
+    <xacro:arg name="visual_params" default="$(find ur_description)/config/ur5/visual_parameters.yaml"/>
     <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface"/>
     <xacro:arg name="safety_limits" default="false"/>
     <xacro:arg name="safety_pos_margin" default="0.15"/>
@@ -53,16 +53,16 @@
     />
 
     <!--  Place robot on top of the table1-->
-    <joint name="moving_base_to_ur10e" type="fixed">
+    <joint name="moving_base_to_ur5" type="fixed">
         <parent link="base_link_mb" />
         <child link = "base_link"/>
-        <origin xyz="-0.296 -0.1688 0.826" rpy="0.0 0.0 0.0" />
+        <origin xyz="-0.296 0 0.826" rpy="0.0 0.0 ${M_PI/4}" />
     </joint>
 
 
     <!-- Place hand camera in the scene-->
     <xacro:sensor_l515 name="rgbd_hand" parent="flange">
-        <origin xyz="0.0 0.0 0.07" rpy="0 0.0 0" />
+        <origin xyz="0.0 0.0 -0.02" rpy="0 0.0 0" />
     </xacro:sensor_l515>
 
     

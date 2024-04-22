@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-        <arg name="bag" default="/tmp/tmp.bag"/>
+        <arg name="bag" default="/home/bruno/tmp.bag"/>
 
         <!--To record only raw data-->
         <!-- http://wiki.ros.org/openni_launch/Tutorials/BagRecordingPlayback-->
@@ -8,10 +8,6 @@
         /tf
         /tf_static
         /joint_states
-        /rgb_body_front/camera_info
-        /rgb_body_front/image_raw/compressed
-        /rgb_body_back/camera_info
-        /rgb_body_back/image_raw/compressed
         /rgbd_hand/color/camera_info
         /rgbd_hand/color/image_raw/compressed
         /rgbd_hand/depth/camera_info
@@ -31,6 +27,10 @@
         /vo_body/fisheye2/image_raw/compressed
 
 
+        /rgb_body_right/camera_info
+        /rgb_body_right/image_raw/compressed
+        /rgb_body_left/camera_info
+        /rgb_body_left/image_raw/compressed
         -o $(arg bag)">
         </node>
 </launch>

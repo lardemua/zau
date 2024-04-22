@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  velodyne_description
+  realsense2_description
 )
 
 ## System dependencies are found with CMake's conventions

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="zau2">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="zau">
 
     <!-- properties file -->
     <xacro:include filename="$(find zau_description)/urdf/properties.xacro"/>
@@ -13,16 +13,17 @@
     <!-- Includes -->
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro" />
     <xacro:include filename="$(find zau_description)/urdf/rgb_camera.urdf.xacro" />
+    <xacro:include filename="$(find zau_description)/urdf/t265.urdf.xacro" />
     
     <!-- Velodyne -->
     <xacro:VLP-16 parent="base_link_mb" name="lidar_body" topic="/velodyne_points" hz="10" samples="440" gpu="true">
-        <origin xyz="-0.350 0.050 0.850" rpy="0 0 0" />
+        <origin xyz="0.420 0.0 0.785" rpy="0 0 0" />
     </xacro:VLP-16>
 
     <!-- Astra camera -->
-    <!-- RGB Body Front Camera -->
-    <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_front" color_gazebo="Red">
-        <origin xyz="-0.350 0.180 0.870" rpy="0 0 3.14" />
+    <!-- RGB Body Right Camera -->
+    <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_right" color_gazebo="Red">
+        <origin xyz="0.420 -0.180 0.785" rpy="0 0 -${pi/4}" />
         <color_rgb_rviz>
             <material name="red">
                 <color rgba="0.9 0 0 1" />
@@ -30,15 +31,21 @@
         </color_rgb_rviz>
     </xacro:rgb_camera>
 
-    <!-- RGB Body Back Camera -->
-    <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_back" color_gazebo="Green">
-        <origin xyz="0.350 0.180 0.825" rpy="0 0 0" />
+    <!-- RGB Body Left Camera -->
+    <xacro:rgb_camera parent="base_link_mb" prefix="rgb_body_left" color_gazebo="Green">
+        <origin xyz="0.420 0.180 0.785" rpy="0 0 0" />
         <color_rgb_rviz>
             <material name="green">
                 <color rgba="0 0.9 0 1" />
             </material>
         </color_rgb_rviz>
     </xacro:rgb_camera>
+
+    <!-- T265 -->
+    <xacro:sensor_t265 parent="base_link_mb" prefix="vo_camera">
+        <origin xyz="0.470 0 0.75" rpy="0 0 0" />
+    </xacro:sensor_t265>
+    
     
     <!-- ######################## the actual robot ######################## -->
     <!-- world link -->
