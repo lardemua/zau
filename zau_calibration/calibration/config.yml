@@ -105,21 +105,30 @@ sensors:
 
 
   # TO-DO: RECORD BAG WITH LIDAR PointCloud
-  # lidar_body:
-  #   link: "lidar_body"
-  #   parent_link: "base_link_mb"
-  #   child_link: "lidar_body_base_link"
-  #   topic_name: "/lidar_body/points"
-  #   modality: "lidar3d" 
-  #   throttle:
+  lidar_body:
+    link: "lidar_body"
+    parent_link: "base_link_mb"
+    child_link: "lidar_body_base_link"
+    topic_name: "/lidar_body/points"
+    modality: "lidar3d"
+    throttle:
 
 
   # TO-DO: ADD FE FROM T265
   # vo_body_fisheye1:
-  #   link: "rgb_body_right_optical_frame"
-  #   parent_link: "base_link_mb"
-  #   child_link: "rgb_body_right_link"
-  #   topic_name: "/rgb_body_right/image_raw"
+  #   link: "vo_body_fisheye1_optical_frame"
+  #   parent_link: "" # ?
+  #   child_link: "vo_body_link"
+  #   topic_name: "/vo_body/fisheye1/image_raw"
+  #   modality: "rgb"
+  #   throttle:
+  
+  # # TO-DO: ADD FE FROM T265
+  # vo_body_fisheye2:
+  #   link: "vo_body_fisheye2_optical_frame"
+  #   parent_link: "" # ?
+  #   child_link: "vo_body_link"
+  #   topic_name: "/vo_body/fisheye2/image_raw"
   #   modality: "rgb"
   #   throttle:
 
