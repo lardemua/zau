@@ -1,0 +1,995 @@
+{
+  "directed": true,
+  "graph": {},
+  "links": [
+    {
+      "child": "lidar_body",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "lidar_body_base_scan_joint",
+      "joint_params_calibrated": null,
+      "parent": "lidar_body_base_link",
+      "source": "lidar_body_base_link",
+      "target": "lidar_body",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgb_body_right_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgb_body_right_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgb_body_right_link",
+      "source": "rgb_body_right_link",
+      "target": "rgb_body_right_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgb_body_left_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgb_body_left_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgb_body_left_link",
+      "source": "rgb_body_left_link",
+      "target": "rgb_body_left_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base_link_mb",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "base_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_footprint",
+      "source": "base_footprint",
+      "target": "base_link_mb",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "lidar_body_base_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "lidar_body_base_mount_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "lidar_body_base_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgb_body_right_link",
+      "from_bag": false,
+      "is_transformation_calibrated": true,
+      "joint_name": "rgb_body_right_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "rgb_body_right_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgb_body_left_link",
+      "from_bag": false,
+      "is_transformation_calibrated": true,
+      "joint_name": "rgb_body_left_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "rgb_body_left_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_camera_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "vo_camera_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "vo_camera_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "inertial_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "inertial_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "inertial_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "wheel_left_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "wheel_left_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "wheel_left_link",
+      "type": "continuous",
+      "weight": 1
+    },
+    {
+      "child": "wheel_right_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "wheel_right_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "wheel_right_link",
+      "type": "continuous",
+      "weight": 1
+    },
+    {
+      "child": "caster_back_right_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "caster_back_right_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "caster_back_right_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "caster_back_left_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "caster_back_left_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "caster_back_left_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "caster_front_right_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "caster_front_right_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "caster_front_right_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "caster_front_left_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "caster_front_left_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "caster_front_left_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "imu_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "imu_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "imu_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base_scan_front",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "scan_joint_front",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "base_scan_front",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base_scan_back",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "scan_joint_back",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "base_scan_back",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base_link",
+      "from_bag": false,
+      "is_transformation_calibrated": true,
+      "joint_name": "moving_base_to_ur5",
+      "joint_params_calibrated": null,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "base_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base_link_inertia",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "base_link-base_link_inertia",
+      "joint_params_calibrated": null,
+      "parent": "base_link",
+      "source": "base_link",
+      "target": "base_link_inertia",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "base_link-base_fixed_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link",
+      "source": "base_link",
+      "target": "base",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "shoulder_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "shoulder_pan_joint",
+      "joint_params_calibrated": null,
+      "parent": "base_link_inertia",
+      "source": "base_link_inertia",
+      "target": "shoulder_link",
+      "type": "revolute",
+      "weight": 1
+    },
+    {
+      "child": "upper_arm_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "shoulder_lift_joint",
+      "joint_params_calibrated": null,
+      "parent": "shoulder_link",
+      "source": "shoulder_link",
+      "target": "upper_arm_link",
+      "type": "revolute",
+      "weight": 1
+    },
+    {
+      "child": "forearm_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "elbow_joint",
+      "joint_params_calibrated": null,
+      "parent": "upper_arm_link",
+      "source": "upper_arm_link",
+      "target": "forearm_link",
+      "type": "revolute",
+      "weight": 1
+    },
+    {
+      "child": "wrist_1_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "wrist_1_joint",
+      "joint_params_calibrated": null,
+      "parent": "forearm_link",
+      "source": "forearm_link",
+      "target": "wrist_1_link",
+      "type": "revolute",
+      "weight": 1
+    },
+    {
+      "child": "wrist_2_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "wrist_2_joint",
+      "joint_params_calibrated": null,
+      "parent": "wrist_1_link",
+      "source": "wrist_1_link",
+      "target": "wrist_2_link",
+      "type": "revolute",
+      "weight": 1
+    },
+    {
+      "child": "wrist_3_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "wrist_3_joint",
+      "joint_params_calibrated": null,
+      "parent": "wrist_2_link",
+      "source": "wrist_2_link",
+      "target": "wrist_3_link",
+      "type": "revolute",
+      "weight": 1
+    },
+    {
+      "child": "flange",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "wrist_3-flange",
+      "joint_params_calibrated": null,
+      "parent": "wrist_3_link",
+      "source": "wrist_3_link",
+      "target": "flange",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "tool0_controller",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "base",
+      "source": "base",
+      "target": "tool0_controller",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "tool0",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "flange-tool0",
+      "joint_params_calibrated": null,
+      "parent": "flange",
+      "source": "flange",
+      "target": "tool0",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_bottom_screw_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_joint",
+      "joint_params_calibrated": null,
+      "parent": "flange",
+      "source": "flange",
+      "target": "rgbd_hand_bottom_screw_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_link",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_link_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_bottom_screw_frame",
+      "source": "rgbd_hand_bottom_screw_frame",
+      "target": "rgbd_hand_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_lower_mount",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_lower_mount_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_bottom_screw_frame",
+      "source": "rgbd_hand_bottom_screw_frame",
+      "target": "rgbd_hand_lower_mount",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_upper_mount",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_upper_mount_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_bottom_screw_frame",
+      "source": "rgbd_hand_bottom_screw_frame",
+      "target": "rgbd_hand_upper_mount",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_depth_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": true,
+      "joint_name": "rgbd_hand_depth_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_link",
+      "source": "rgbd_hand_link",
+      "target": "rgbd_hand_depth_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_infra_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_infra_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_link",
+      "source": "rgbd_hand_link",
+      "target": "rgbd_hand_infra_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_color_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": true,
+      "joint_name": "rgbd_hand_color_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_link",
+      "source": "rgbd_hand_link",
+      "target": "rgbd_hand_color_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_depth_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_depth_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_depth_frame",
+      "source": "rgbd_hand_depth_frame",
+      "target": "rgbd_hand_depth_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_infra_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_infra_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_infra_frame",
+      "source": "rgbd_hand_infra_frame",
+      "target": "rgbd_hand_infra_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_color_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_color_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_color_frame",
+      "source": "rgbd_hand_color_frame",
+      "target": "rgbd_hand_color_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_gyro_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_gyro_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_color_frame",
+      "source": "rgbd_hand_color_frame",
+      "target": "rgbd_hand_gyro_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_accel_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_accel_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_color_frame",
+      "source": "rgbd_hand_color_frame",
+      "target": "rgbd_hand_accel_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_gyro_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_gyro_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_gyro_frame",
+      "source": "rgbd_hand_gyro_frame",
+      "target": "rgbd_hand_gyro_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "rgbd_hand_accel_optical_frame",
+      "from_bag": false,
+      "is_transformation_calibrated": false,
+      "joint_name": "rgbd_hand_accel_optical_joint",
+      "joint_params_calibrated": null,
+      "parent": "rgbd_hand_accel_frame",
+      "source": "rgbd_hand_accel_frame",
+      "target": "rgbd_hand_accel_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "pattern_link",
+      "from_bag": false,
+      "is_transformation_calibrated": true,
+      "joint_name": null,
+      "joint_params_calibrated": null,
+      "parent": "world",
+      "source": "world",
+      "target": "pattern_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "base_footprint",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "world",
+      "source": "world",
+      "target": "base_footprint",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zaumap_nn0",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "world",
+      "source": "world",
+      "target": "zaumap_nn0",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zauVertex4",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "zaumap_nn0",
+      "source": "zaumap_nn0",
+      "target": "zauVertex4",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zauVertex5",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "zaumap_nn0",
+      "source": "zaumap_nn0",
+      "target": "zauVertex5",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zauVertex11",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "zaumap_nn0",
+      "source": "zaumap_nn0",
+      "target": "zauVertex11",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zauVertex3",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "zaumap_nn0",
+      "source": "zaumap_nn0",
+      "target": "zauVertex3",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zauVertex2",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "zaumap_nn0",
+      "source": "zaumap_nn0",
+      "target": "zauVertex2",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
+      "child": "zauVertex1",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "zaumap_nn0",
+      "source": "zaumap_nn0",
+      "target": "zauVertex1",
+      "type": "multiple",
+      "weight": 1
+    }
+  ],
+  "multigraph": false,
+  "nodes": [
+    {
+      "from_bag": false,
+      "id": "lidar_body_base_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "lidar_body",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgb_body_right_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgb_body_right_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": "rgb_body_right"
+    },
+    {
+      "from_bag": false,
+      "id": "rgb_body_left_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgb_body_left_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": "rgb_body_left"
+    },
+    {
+      "from_bag": false,
+      "id": "vo_camera_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base_footprint",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base_link_mb",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "inertial_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "wheel_left_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "wheel_right_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "caster_back_right_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "caster_back_left_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "caster_front_right_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "caster_front_left_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "imu_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base_scan_front",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base_scan_back",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base_link_inertia",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "shoulder_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "upper_arm_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "forearm_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "wrist_1_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "wrist_2_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "wrist_3_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "base",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "flange",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "tool0",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_bottom_screw_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_link",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_lower_mount",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_upper_mount",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_depth_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_depth_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": "rgbd_depth_hand"
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_infra_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_infra_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_color_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_color_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": "rgbd_color_hand"
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_gyro_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_gyro_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_accel_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "from_bag": false,
+      "id": "rgbd_hand_accel_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "pattern_link",
+      "is_world": false,
+      "pattern": "pattern_1",
+      "sensor_data": null
+    },
+    {
+      "id": "world",
+      "is_world": true,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "tool0_controller",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zaumap_nn0",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zauVertex4",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zauVertex5",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zauVertex11",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zauVertex3",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zauVertex2",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "zauVertex1",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    }
+  ]
+}
