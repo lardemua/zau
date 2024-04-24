@@ -84,6 +84,36 @@ Visualization Manager:
     Show Visual Aids: false
     Update Topic: set_initial_estimate/update
     Value: true
+  - Alpha: 1
+    Autocompute Intensity Bounds: true
+    Autocompute Value Bounds:
+      Max Value: 10
+      Min Value: -10
+      Value: true
+    Axis: Z
+    Channel Name: intensity
+    Class: rviz/PointCloud2
+    Color: 141; 211; 199
+    Color Transformer: FlatColor
+    Decay Time: 0
+    Enabled: true
+    Invert Rainbow: false
+    Max Color: 255; 255; 255
+    Max Intensity: 4096
+    Min Color: 0; 0; 0
+    Min Intensity: 0
+    Name: lidar_body-PointCloud2
+    Position Transformer: ''
+    Queue Size: 10
+    Selectable: true
+    Size (Pixels): 3
+    Size (m): 0.02
+    Style: Spheres
+    Topic: /lidar_body/points
+    Unreliable: false
+    Use Fixed Frame: true
+    Use rainbow: true
+    Value: true
   - Class: rviz/Image
     Enabled: true
     Image Topic: /rgb_body_left/image_raw
@@ -154,7 +184,7 @@ Visualization Manager:
     Max Value: 1
     Median window: 5
     Min Value: 0
-    Name: rgbd_color_hand-Image
+    Name: rgbd_hand_color-Image
     Normalize Range: true
     Queue Size: 2
     Transport Hint: raw
@@ -164,7 +194,7 @@ Visualization Manager:
     Enabled: true
     Image Rendering: background and overlay
     Image Topic: /rgbd_hand/color/image_raw
-    Name: rgbd_color_hand-Camera
+    Name: rgbd_hand_color-Camera
     Overlay Alpha: 0.5
     Queue Size: 2
     Transport Hint: raw
@@ -175,8 +205,8 @@ Visualization Manager:
     Zoom Factor: 1
   - Class: rviz/MarkerArray
     Enabled: true
-    Marker Topic: rgbd_color_hand/frustum
-    Name: rgbd_color_hand-Frustum
+    Marker Topic: rgbd_hand_color/frustum
+    Name: rgbd_hand_color-Frustum
     Namespaces: {}
     Queue Size: 10
     Value: true
@@ -186,7 +216,7 @@ Visualization Manager:
     Max Value: 1
     Median window: 5
     Min Value: 0
-    Name: rgbd_depth_hand-Image
+    Name: rgbd_hand_depth-Image
     Normalize Range: true
     Queue Size: 2
     Transport Hint: raw
@@ -196,7 +226,7 @@ Visualization Manager:
     Enabled: true
     Image Rendering: background and overlay
     Image Topic: /rgbd_hand/depth/image_raw
-    Name: rgbd_depth_hand-Camera
+    Name: rgbd_hand_depth-Camera
     Overlay Alpha: 0.5
     Queue Size: 2
     Transport Hint: raw
@@ -207,8 +237,8 @@ Visualization Manager:
     Zoom Factor: 1
   - Class: rviz/MarkerArray
     Enabled: true
-    Marker Topic: rgbd_depth_hand/frustum
-    Name: rgbd_depth_hand-Frustum
+    Marker Topic: rgbd_hand_depth/frustum
+    Name: rgbd_hand_depth-Frustum
     Namespaces: {}
     Queue Size: 10
     Value: true

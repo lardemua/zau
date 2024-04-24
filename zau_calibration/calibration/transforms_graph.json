@@ -53,7 +53,7 @@
     {
       "child": "lidar_body_base_link",
       "from_bag": false,
-      "is_transformation_calibrated": false,
+      "is_transformation_calibrated": true,
       "joint_name": "lidar_body_base_mount_joint",
       "joint_params_calibrated": null,
       "parent": "base_link_mb",
@@ -635,7 +635,7 @@
       "id": "lidar_body",
       "is_world": false,
       "pattern": null,
-      "sensor_data": null
+      "sensor_data": "lidar_body"
     },
     {
       "from_bag": false,
@@ -873,7 +873,7 @@
       "id": "rgbd_hand_depth_optical_frame",
       "is_world": false,
       "pattern": null,
-      "sensor_data": "rgbd_depth_hand"
+      "sensor_data": "rgbd_hand_depth"
     },
     {
       "from_bag": false,
@@ -901,7 +901,7 @@
       "id": "rgbd_hand_color_optical_frame",
       "is_world": false,
       "pattern": null,
-      "sensor_data": "rgbd_color_hand"
+      "sensor_data": "rgbd_hand_color"
     },
     {
       "from_bag": false,

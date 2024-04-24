@@ -25,7 +25,7 @@
 @arg marker_size   The size of the interaction marker that is used to trigger a data save.
 
 @arg bag_file  Absolute path to the playing bag.
-    default: $(env ROS_BAGS)/zau/inesc_day1_1_cropped_renamed_without_splits_atom_filtered.bag
+    default: $(env ROS_BAGS)/zau/inesc_day2_2_processed_atom_filtered.bag
 @arg bag_start Playback starting time (in seconds). default: 0.0
 @arg bag_rate  Playback rate. default: 1.0
 -->
@@ -43,7 +43,7 @@
     <arg name="rviz_file" default="$(find zau_calibration)/rviz/collect_data.rviz"/>
     <arg name="description_file" default="$(find zau_calibration)/urdf/initial_estimate.urdf.xacro"/>
     <!-- arguments to be passed onto playbag.launch  -->
-    <arg name="bag_file" default="$(env ROS_BAGS)/zau/inesc_day1_1_cropped_renamed_without_splits_atom_filtered.bag"/>
+    <arg name="bag_file" default="$(env ROS_BAGS)/zau/inesc_day2_2_processed_atom_filtered.bag"/>
     <arg name="bag_start" default="0"/>
     <arg name="bag_rate" default="1"/>
     <arg name="ssl" default="lambda sensor_name: False"/>
@@ -77,15 +77,15 @@
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
     <!-- Labeler nodes -->
     
-    <!-- Sensor rgbd_color_hand rgb_labeler -->
-    <node name="rgbd_color_hand_labeler" pkg="atom_calibration" type="rgb_labeler"
-        args="-cfg $(arg config_file) -sn rgbd_color_hand"
+    <!-- Sensor rgbd_hand_color rgb_labeler -->
+    <node name="rgbd_hand_color_labeler" pkg="atom_calibration" type="rgb_labeler"
+        args="-cfg $(arg config_file) -sn rgbd_hand_color"
         required="true"
         output="screen"/>
     
-    <!-- Sensor rgbd_depth_hand depth_labeler -->
-    <node name="rgbd_depth_hand_labeler" pkg="atom_calibration" type="depth_labeler"
-        args="-cfg $(arg config_file) -sn rgbd_depth_hand"
+    <!-- Sensor rgbd_hand_depth depth_labeler -->
+    <node name="rgbd_hand_depth_labeler" pkg="atom_calibration" type="depth_labeler"
+        args="-cfg $(arg config_file) -sn rgbd_hand_depth"
         required="true"
         output="screen"/>
     
@@ -98,6 +98,12 @@
     <!-- Sensor rgb_body_right rgb_labeler -->
     <node name="rgb_body_right_labeler" pkg="atom_calibration" type="rgb_labeler"
         args="-cfg $(arg config_file) -sn rgb_body_right"
+        required="true"
+        output="screen"/>
+    
+    <!-- Sensor lidar_body lidar3d_labeler -->
+    <node name="lidar_body_labeler" pkg="atom_calibration" type="lidar3d_labeler"
+        args="-cfg $(arg config_file) -sn lidar_body"
         required="true"
         output="screen"/>
     

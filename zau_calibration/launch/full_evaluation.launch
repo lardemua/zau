@@ -34,53 +34,73 @@
     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
     <!-- Evaluation -->
     <node type="depth_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="rgbd_depth_hand_to_rgbd_color_hand_pattern_1_evaluation"
-        args="-cs rgbd_color_hand -ds rgbd_depth_hand  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="rgbd_hand_depth_to_rgbd_hand_color_pattern_1_evaluation"
+        args="-cs rgbd_hand_color -ds rgbd_hand_depth  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_depth_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_depth_hand_to_rgbd_color_hand_pattern_1_evaluation"
-        args="-cs rgbd_color_hand -ds rgbd_depth_hand  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_depth_to_rgbd_hand_color_pattern_1_evaluation"
+        args="-cs rgbd_hand_color -ds rgbd_hand_depth  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="rgbd_color_hand_to_rgb_body_left_pattern_1_evaluation"
-        args="-ss rgbd_color_hand -st rgb_body_left -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="rgbd_hand_color_to_rgb_body_left_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st rgb_body_left -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_color_hand_to_rgb_body_left_pattern_1_evaluation"
-        args="-ss rgbd_color_hand -st rgb_body_left -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_color_to_rgb_body_left_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st rgb_body_left -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="rgbd_color_hand_to_rgb_body_right_pattern_1_evaluation"
-        args="-ss rgbd_color_hand -st rgb_body_right -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="rgbd_hand_color_to_rgb_body_right_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st rgb_body_right -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_color_hand_to_rgb_body_right_pattern_1_evaluation"
-        args="-ss rgbd_color_hand -st rgb_body_right -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_color_to_rgb_body_right_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st rgb_body_right -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="lidar_body_to_rgbd_hand_color_pattern_1_evaluation"
+        args="-cs rgbd_hand_color -rs lidar_body  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_rgbd_hand_color_pattern_1_evaluation"
+        args="-cs rgbd_hand_color -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="depth_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="rgbd_depth_hand_to_rgb_body_left_pattern_1_evaluation"
-        args="-ds rgbd_depth_hand -cs rgb_body_left  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="rgbd_hand_depth_to_rgb_body_left_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs rgb_body_left  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_depth_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_depth_hand_to_rgb_body_left_pattern_1_evaluation"
-        args="-ds rgbd_depth_hand -cs rgb_body_left  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_depth_to_rgb_body_left_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs rgb_body_left  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="depth_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="rgbd_depth_hand_to_rgb_body_right_pattern_1_evaluation"
-        args="-ds rgbd_depth_hand -cs rgb_body_right  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="rgbd_hand_depth_to_rgb_body_right_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs rgb_body_right  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_depth_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_depth_hand_to_rgb_body_right_pattern_1_evaluation"
-        args="-ds rgbd_depth_hand -cs rgb_body_right  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_depth_to_rgb_body_right_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs rgb_body_right  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="lidar_to_depth_evaluation" pkg="atom_evaluation" 
+        name="lidar_body_to_rgbd_hand_depth_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -rs lidar_body  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_depth_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_rgbd_hand_depth_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
@@ -93,14 +113,34 @@
         args="-ss rgb_body_left -st rgb_body_right -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
+    <node type="lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="lidar_body_to_rgb_body_left_pattern_1_evaluation"
+        args="-cs rgb_body_left -rs lidar_body  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_rgb_body_left_pattern_1_evaluation"
+        args="-cs rgb_body_left -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="lidar_body_to_rgb_body_right_pattern_1_evaluation"
+        args="-cs rgb_body_right -rs lidar_body  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_rgb_body_right_pattern_1_evaluation"
+        args="-cs rgb_body_right -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
     <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_color_hand_to_rgbd_color_hand_pattern_1_evaluation"
-        args="-ss rgbd_color_hand -st rgbd_color_hand -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_color_to_rgbd_hand_color_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st rgbd_hand_color -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_depth_to_depth_evaluation" pkg="atom_evaluation" 
-        name="inter_collection_rgbd_depth_hand_to_rgbd_depth_hand_pattern_1_evaluation"
-        args="-ss rgbd_depth_hand -st rgbd_depth_hand -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        name="inter_collection_rgbd_hand_depth_to_rgbd_hand_depth_pattern_1_evaluation"
+        args="-ss rgbd_hand_depth -st rgbd_hand_depth -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
@@ -111,6 +151,11 @@
     <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
         name="inter_collection_rgb_body_right_to_rgb_body_right_pattern_1_evaluation"
         args="-ss rgb_body_right -st rgb_body_right -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_lidar_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_lidar_body_pattern_1_evaluation"
+        args="-ss lidar_body -st lidar_body -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     

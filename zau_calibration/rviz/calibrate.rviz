@@ -86,6 +86,13 @@ Visualization Manager:
     Namespaces: {}
     Queue Size: 10
     Value: true
+  - Class: rviz/MarkerArray
+    Enabled: true
+    Marker Topic: /lidar_body/points/labeled3d
+    Name: lidar_body-LabeledData
+    Namespaces: {}
+    Queue Size: 10
+    Value: true
   - Class: rviz/Image
     Enabled: true
     Image Topic: /rgb_body_left/image_raw/c000/labeled2d
@@ -116,7 +123,7 @@ Visualization Manager:
     Max Value: 1
     Median window: 5
     Min Value: 0
-    Name: rgbd_color_hand-Labels-Image
+    Name: rgbd_hand_color-Labels-Image
     Normalize Range: true
     Queue Size: 2
     Transport Hint: raw
@@ -128,7 +135,7 @@ Visualization Manager:
     Max Value: 1
     Median window: 5
     Min Value: 0
-    Name: rgbd_depth_hand-Labels-Image
+    Name: rgbd_hand_depth-Labels-Image
     Normalize Range: true
     Queue Size: 2
     Transport Hint: raw
@@ -137,7 +144,7 @@ Visualization Manager:
   - Class: rviz/MarkerArray
     Enabled: true
     Marker Topic: /rgbd_hand/depth/image_raw/labeled3d
-    Name: rgbd_depth_hand-Labels-3D
+    Name: rgbd_hand_depth-Labels-3D
     Namespaces: {}
     Queue Size: 10
     Value: true

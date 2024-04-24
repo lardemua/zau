@@ -366,7 +366,7 @@
     </sensor>
   </gazebo>
   <joint name="rgb_body_left_joint" type="fixed">
-    <origin xyz="0.4912921399098926 0.08316541125075634 1.0832106256157366" rpy="2.5553632034074596 0.22645120802730287 -0.3135815114102744"/>
+    <origin xyz="0.42 0.18 0.785" rpy="0.0 0.0 0.0"/>
     <parent link="base_link_mb"/>
     <child link="rgb_body_left_link"/>
   </joint>
@@ -990,7 +990,7 @@
     </plugin>
   </gazebo>
   <joint name="moving_base_to_ur5" type="fixed">
-    <origin xyz="-0.8520002989717641 -0.12279492296939515 0.3974796675291211" rpy="-0.09152001902158226 -0.002885792435245281 0.8191108336480117"/>
+    <origin xyz="-0.3045167259926804 -0.007351914077359987 0.7554713358430281" rpy="-0.00878433423372189 -0.007335589241887524 0.7794757711776688"/>
     <parent link="base_link_mb"/>
     <child link="base_link"/>
   </joint>
@@ -1037,7 +1037,7 @@
   </joint>
   <link name="rgbd_hand_upper_mount"/>
   <joint name="rgbd_hand_depth_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="-0.008111176018876695 -0.1321573510612559 0.020304664837274142" rpy="-0.008981481945661514 0.025474687154242084 0.0012071078941518654"/>
     <parent link="rgbd_hand_link"/>
     <child link="rgbd_hand_depth_frame"/>
   </joint>
@@ -1061,7 +1061,7 @@
   </joint>
   <link name="rgbd_hand_infra_optical_frame"/>
   <joint name="rgbd_hand_color_joint" type="fixed">
-    <origin xyz="0.6871970198884385 0.12996645291937317 0.39571018683490666" rpy="-0.5699416838708846 0.14395220215263646 -0.09562433799646684"/>
+    <origin xyz="-0.02127901880429424 -0.0017042420271146314 0.01796930232408657" rpy="0.01693751492071353 -0.003971680354125521 -0.008793358053937585"/>
     <parent link="rgbd_hand_link"/>
     <child link="rgbd_hand_color_frame"/>
   </joint>
@@ -1106,7 +1106,7 @@
     </visual>
   </link>
   <joint name="world-pattern_link" type="fixed">
-    <origin xyz="2.6038062558095283 -0.711041255883697 0.9662541590342425" rpy="1.1294426753503517 1.0300991339225574 1.1282630443481336"/>
+    <origin xyz="4.39066259974647 -4.156050148663745 0.7105679051666834" rpy="1.8423057284286584 0.6138971825277025 -0.18964673326025014"/>
     <parent link="world"/>
     <child link="pattern_link"/>
   </joint>

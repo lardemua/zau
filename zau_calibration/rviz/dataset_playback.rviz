@@ -72,6 +72,36 @@ Visualization Manager:
     Namespaces: {}
     Queue Size: 10
     Value: true
+  - Alpha: 1
+    Autocompute Intensity Bounds: true
+    Autocompute Value Bounds:
+      Max Value: 10
+      Min Value: -10
+      Value: true
+    Axis: Z
+    Channel Name: intensity
+    Class: rviz/PointCloud2
+    Color: 141; 211; 199
+    Color Transformer: RGB8
+    Decay Time: 0
+    Enabled: true
+    Invert Rainbow: false
+    Max Color: 255; 255; 255
+    Max Intensity: 4096
+    Min Color: 0; 0; 0
+    Min Intensity: 0
+    Name: lidar_body-Labels3d-PointCloud2
+    Position Transformer: ''
+    Queue Size: 10
+    Selectable: true
+    Size (Pixels): 3
+    Size (m): 0.02
+    Style: Spheres
+    Topic: /lidar_body/points/labeled3d
+    Unreliable: false
+    Use Fixed Frame: true
+    Use rainbow: true
+    Value: true
   - Class: rviz/Image
     Enabled: true
     Image Topic: /rgb_body_left/image_raw/labeled2d
@@ -102,7 +132,7 @@ Visualization Manager:
     Max Value: 1
     Median window: 5
     Min Value: 0
-    Name: rgbd_color_hand-Labels-Image
+    Name: rgbd_hand_color-Labels-Image
     Normalize Range: true
     Queue Size: 2
     Transport Hint: raw
@@ -114,7 +144,7 @@ Visualization Manager:
     Max Value: 1
     Median window: 5
     Min Value: 0
-    Name: rgbd_depth_hand-Labels-Image
+    Name: rgbd_hand_depth-Labels-Image
     Normalize Range: true
     Queue Size: 2
     Transport Hint: raw
@@ -123,7 +153,7 @@ Visualization Manager:
   - Class: rviz/MarkerArray
     Enabled: true
     Marker Topic: /rgbd_hand/depth/image_raw/labeled3d
-    Name: rgbd_depth_hand-Labels-3D
+    Name: rgbd_hand_depth-Labels-3D
     Namespaces: {}
     Queue Size: 10
     Value: true
