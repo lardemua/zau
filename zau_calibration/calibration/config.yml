@@ -35,9 +35,7 @@
 description_file: "package://zau_description/urdf/zau.urdf.xacro"
 
 # The calibration framework requires a bagfile to extract the necessary data for the calibration.
-# bag_file: "$ROS_BAGS/zau/inesc_day1_1_cropped_renamed_without_splits.bag"
-# bag_file: "$ROS_BAGS/zau/inesc_day2_1_renamed_without_vo.bag"
-bag_file: "$ROS_BAGS/zau/inesc_day2_2_processed.bag"
+bag_file: "$ROS_BAGS/zau/inesc_day2_1.bag"
 
 # You must define a frame of reference for the optimization process.
 # It must exist in the transformation chains of all the sensors which are being calibrated.
@@ -105,8 +103,6 @@ sensors:
     modality: "rgb"
     throttle: 
 
-
-  # TO-DO: RECORD BAG WITH LIDAR PointCloud
   lidar_body:
     link: "lidar_body"
     parent_link: "base_link_mb"
