@@ -42,7 +42,7 @@
     </xacro:rgb_camera>
 
     <!-- T265 -->
-    <xacro:sensor_t265 parent="base_link_mb" prefix="vo_camera">
+    <xacro:sensor_t265 parent="base_link_mb" prefix="vo_body">
         <origin xyz="0.470 0 0.75" rpy="0 0 0" />
     </xacro:sensor_t265>
     
