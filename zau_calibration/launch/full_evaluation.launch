@@ -73,6 +73,26 @@
         args="-cs rgbd_hand_color -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgbd_hand_color_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st vo_body_fisheye1 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgbd_hand_color_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st vo_body_fisheye1 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgbd_hand_color_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st vo_body_fisheye2 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgbd_hand_color_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss rgbd_hand_color -st vo_body_fisheye2 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
     <node type="depth_to_rgb_evaluation" pkg="atom_evaluation" 
         name="rgbd_hand_depth_to_rgb_body_left_pattern_1_evaluation"
         args="-ds rgbd_hand_depth -cs rgb_body_left  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
@@ -103,6 +123,26 @@
         args="-ds rgbd_hand_depth -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
+    <node type="depth_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgbd_hand_depth_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs vo_body_fisheye1  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_depth_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgbd_hand_depth_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs vo_body_fisheye1  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="depth_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgbd_hand_depth_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs vo_body_fisheye2  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_depth_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgbd_hand_depth_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ds rgbd_hand_depth -cs vo_body_fisheye2  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
     <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
         name="rgb_body_left_to_rgb_body_right_pattern_1_evaluation"
         args="-ss rgb_body_left -st rgb_body_right -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
@@ -123,6 +163,26 @@
         args="-cs rgb_body_left -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgb_body_left_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss rgb_body_left -st vo_body_fisheye1 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgb_body_left_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss rgb_body_left -st vo_body_fisheye1 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgb_body_left_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss rgb_body_left -st vo_body_fisheye2 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgb_body_left_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss rgb_body_left -st vo_body_fisheye2 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
     <node type="lidar_to_rgb_evaluation" pkg="atom_evaluation" 
         name="lidar_body_to_rgb_body_right_pattern_1_evaluation"
         args="-cs rgb_body_right -rs lidar_body  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
@@ -131,6 +191,56 @@
     <node type="inter_collection_lidar_to_rgb_evaluation" pkg="atom_evaluation" 
         name="inter_collection_lidar_body_to_rgb_body_right_pattern_1_evaluation"
         args="-cs rgb_body_right -rs lidar_body  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgb_body_right_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss rgb_body_right -st vo_body_fisheye1 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgb_body_right_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss rgb_body_right -st vo_body_fisheye1 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="rgb_body_right_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss rgb_body_right -st vo_body_fisheye2 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_rgb_body_right_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss rgb_body_right -st vo_body_fisheye2 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="lidar_body_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-rs lidar_body -cs vo_body_fisheye1  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-rs lidar_body -cs vo_body_fisheye1  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="lidar_body_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-rs lidar_body -cs vo_body_fisheye2  -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_lidar_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_lidar_body_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-rs lidar_body -cs vo_body_fisheye2  -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="vo_body_fisheye1_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss vo_body_fisheye1 -st vo_body_fisheye2 -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_vo_body_fisheye1_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss vo_body_fisheye1 -st vo_body_fisheye2 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
@@ -156,6 +266,16 @@
     <node type="inter_collection_lidar_to_lidar_evaluation" pkg="atom_evaluation" 
         name="inter_collection_lidar_body_to_lidar_body_pattern_1_evaluation"
         args="-ss lidar_body -st lidar_body -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_vo_body_fisheye1_to_vo_body_fisheye1_pattern_1_evaluation"
+        args="-ss vo_body_fisheye1 -st vo_body_fisheye1 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
+        output="screen"/>
+
+    <node type="inter_collection_rgb_to_rgb_evaluation" pkg="atom_evaluation" 
+        name="inter_collection_vo_body_fisheye2_to_vo_body_fisheye2_pattern_1_evaluation"
+        args="-ss vo_body_fisheye2 -st vo_body_fisheye2 -wf world -train_json $(arg train_json) -test_json $(arg test_json) -csf '$(arg csf)' -sfr" 
         output="screen"/>
 
     

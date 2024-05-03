@@ -148,6 +148,30 @@ Visualization Manager:
     Namespaces: {}
     Queue Size: 10
     Value: true
+  - Class: rviz/Image
+    Enabled: true
+    Image Topic: /vo_body/fisheye1/image_raw/c000/labeled2d
+    Max Value: 1
+    Median window: 5
+    Min Value: 0
+    Name: vo_body_fisheye1-Labels-Image
+    Normalize Range: true
+    Queue Size: 2
+    Transport Hint: raw
+    Unreliable: false
+    Value: false
+  - Class: rviz/Image
+    Enabled: true
+    Image Topic: /vo_body/fisheye2/image_raw/c000/labeled2d
+    Max Value: 1
+    Median window: 5
+    Min Value: 0
+    Name: vo_body_fisheye2-Labels-Image
+    Normalize Range: true
+    Queue Size: 2
+    Transport Hint: raw
+    Unreliable: false
+    Value: false
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255

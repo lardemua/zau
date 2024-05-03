@@ -242,6 +242,70 @@ Visualization Manager:
     Namespaces: {}
     Queue Size: 10
     Value: true
+  - Class: rviz/Image
+    Enabled: true
+    Image Topic: /vo_body/fisheye1/image_raw
+    Max Value: 1
+    Median window: 5
+    Min Value: 0
+    Name: vo_body_fisheye1-Image
+    Normalize Range: true
+    Queue Size: 2
+    Transport Hint: raw
+    Unreliable: false
+    Value: false
+  - Class: rviz/Camera
+    Enabled: true
+    Image Rendering: background and overlay
+    Image Topic: /vo_body/fisheye1/image_raw
+    Name: vo_body_fisheye1-Camera
+    Overlay Alpha: 0.5
+    Queue Size: 2
+    Transport Hint: raw
+    Unreliable: false
+    Value: false
+    Visibility:
+      Value: true
+    Zoom Factor: 1
+  - Class: rviz/MarkerArray
+    Enabled: true
+    Marker Topic: vo_body_fisheye1/frustum
+    Name: vo_body_fisheye1-Frustum
+    Namespaces: {}
+    Queue Size: 10
+    Value: true
+  - Class: rviz/Image
+    Enabled: true
+    Image Topic: /vo_body/fisheye2/image_raw
+    Max Value: 1
+    Median window: 5
+    Min Value: 0
+    Name: vo_body_fisheye2-Image
+    Normalize Range: true
+    Queue Size: 2
+    Transport Hint: raw
+    Unreliable: false
+    Value: false
+  - Class: rviz/Camera
+    Enabled: true
+    Image Rendering: background and overlay
+    Image Topic: /vo_body/fisheye2/image_raw
+    Name: vo_body_fisheye2-Camera
+    Overlay Alpha: 0.5
+    Queue Size: 2
+    Transport Hint: raw
+    Unreliable: false
+    Value: false
+    Visibility:
+      Value: true
+    Zoom Factor: 1
+  - Class: rviz/MarkerArray
+    Enabled: true
+    Marker Topic: vo_body_fisheye2/frustum
+    Name: vo_body_fisheye2-Frustum
+    Namespaces: {}
+    Queue Size: 10
+    Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255

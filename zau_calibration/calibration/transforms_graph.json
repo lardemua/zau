@@ -39,6 +39,56 @@
       "weight": 1
     },
     {
+      "child": "vo_body_fisheye1_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": true,
+      "parent": "vo_body_link",
+      "source": "vo_body_link",
+      "target": "vo_body_fisheye1_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_fisheye2_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": true,
+      "parent": "vo_body_link",
+      "source": "vo_body_link",
+      "target": "vo_body_fisheye2_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_gyro_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_link",
+      "source": "vo_body_link",
+      "target": "vo_body_gyro_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_accel_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_link",
+      "source": "vo_body_link",
+      "target": "vo_body_accel_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_pose_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_link",
+      "source": "vo_body_link",
+      "target": "vo_body_pose_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
       "child": "base_link_mb",
       "from_bag": false,
       "is_transformation_calibrated": false,
@@ -87,14 +137,14 @@
       "weight": 1
     },
     {
-      "child": "vo_camera_link",
+      "child": "vo_body_link",
       "from_bag": false,
       "is_transformation_calibrated": false,
-      "joint_name": "vo_camera_joint",
+      "joint_name": "vo_body_joint",
       "joint_params_calibrated": null,
       "parent": "base_link_mb",
       "source": "base_link_mb",
-      "target": "vo_camera_link",
+      "target": "vo_body_link",
       "type": "fixed",
       "weight": 1
     },
@@ -119,7 +169,7 @@
       "parent": "base_link_mb",
       "source": "base_link_mb",
       "target": "wheel_left_link",
-      "type": "continuous",
+      "type": "fixed",
       "weight": 1
     },
     {
@@ -131,7 +181,7 @@
       "parent": "base_link_mb",
       "source": "base_link_mb",
       "target": "wheel_right_link",
-      "type": "continuous",
+      "type": "fixed",
       "weight": 1
     },
     {
@@ -561,6 +611,16 @@
       "weight": 1
     },
     {
+      "child": "vo_body_odom_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_pose_frame",
+      "source": "vo_body_pose_frame",
+      "target": "vo_body_odom_frame",
+      "type": "multiple",
+      "weight": 1
+    },
+    {
       "child": "zauVertex4",
       "from_bag": true,
       "is_transformation_calibrated": false,
@@ -619,6 +679,46 @@
       "target": "zauVertex1",
       "type": "multiple",
       "weight": 1
+    },
+    {
+      "child": "vo_body_fisheye1_optical_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_fisheye1_frame",
+      "source": "vo_body_fisheye1_frame",
+      "target": "vo_body_fisheye1_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_fisheye2_optical_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_fisheye2_frame",
+      "source": "vo_body_fisheye2_frame",
+      "target": "vo_body_fisheye2_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_gyro_optical_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_gyro_frame",
+      "source": "vo_body_gyro_frame",
+      "target": "vo_body_gyro_optical_frame",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
+      "child": "vo_body_accel_optical_frame",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "vo_body_accel_frame",
+      "source": "vo_body_accel_frame",
+      "target": "vo_body_accel_optical_frame",
+      "type": "fixed",
+      "weight": 1
     }
   ],
   "multigraph": false,
@@ -667,7 +767,7 @@
     },
     {
       "from_bag": false,
-      "id": "vo_camera_link",
+      "id": "vo_body_link",
       "is_world": false,
       "pattern": null,
       "sensor_data": null
@@ -950,6 +1050,18 @@
       "sensor_data": null
     },
     {
+      "id": "vo_body_pose_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_odom_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
       "id": "zaumap_nn0",
       "is_world": false,
       "pattern": null,
@@ -987,6 +1099,54 @@
     },
     {
       "id": "zauVertex1",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_fisheye1_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_fisheye1_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": "vo_body_fisheye1"
+    },
+    {
+      "id": "vo_body_fisheye2_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_fisheye2_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": "vo_body_fisheye2"
+    },
+    {
+      "id": "vo_body_gyro_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_gyro_optical_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_accel_frame",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_body_accel_optical_frame",
       "is_world": false,
       "pattern": null,
       "sensor_data": null
