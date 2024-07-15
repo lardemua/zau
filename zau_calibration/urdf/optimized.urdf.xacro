@@ -206,7 +206,7 @@
     </sensor>
   </gazebo>
   <joint name="lidar_body_base_mount_joint" type="fixed">
-    <origin xyz="0.42 0.0 0.785" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.4065805162846084 -0.00188378137646925 0.6969758433942858" rpy="-0.025494779948954775 -0.010372295772356937 0.026399899300530022"/>
     <parent link="base_link_mb"/>
     <child link="lidar_body_base_link"/>
   </joint>
