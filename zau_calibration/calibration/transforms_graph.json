@@ -281,6 +281,16 @@
       "weight": 1
     },
     {
+      "child": "vo_camera_link",
+      "from_bag": true,
+      "is_transformation_calibrated": false,
+      "parent": "base_link_mb",
+      "source": "base_link_mb",
+      "target": "vo_camera_link",
+      "type": "fixed",
+      "weight": 1
+    },
+    {
       "child": "base_link_inertia",
       "from_bag": false,
       "is_transformation_calibrated": false,
@@ -1099,6 +1109,12 @@
     },
     {
       "id": "zauVertex1",
+      "is_world": false,
+      "pattern": null,
+      "sensor_data": null
+    },
+    {
+      "id": "vo_camera_link",
       "is_world": false,
       "pattern": null,
       "sensor_data": null

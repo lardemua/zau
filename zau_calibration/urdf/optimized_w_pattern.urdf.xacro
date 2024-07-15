@@ -298,7 +298,7 @@
     </sensor>
   </gazebo>
   <joint name="rgb_body_right_joint" type="fixed">
-    <origin xyz="0.42 -0.18 0.785" rpy="0.0 0.0 -0.7853981633974483"/>
+    <origin xyz="0.44849657312954305 -0.13924714920313214 0.8038656104608047" rpy="-0.012528016962920592 -0.024286934714800812 -0.7885222539516726"/>
     <parent link="base_link_mb"/>
     <child link="rgb_body_right_link"/>
   </joint>
@@ -366,7 +366,7 @@
     </sensor>
   </gazebo>
   <joint name="rgb_body_left_joint" type="fixed">
-    <origin xyz="0.42 0.18 0.785" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.3359213670604494 0.22530184964211486 0.8162844773606661" rpy="0.03903643453905282 0.00646558870835319 0.06595449805905455"/>
     <parent link="base_link_mb"/>
     <child link="rgb_body_left_link"/>
   </joint>
@@ -433,12 +433,12 @@
       </plugin>
     </sensor>
   </gazebo>
-  <joint name="vo_camera_joint" type="fixed">
+  <joint name="vo_body_joint" type="fixed">
     <origin xyz="0.47 0.0 0.75" rpy="0.0 0.0 0.0"/>
     <parent link="base_link_mb"/>
-    <child link="vo_camera_link"/>
+    <child link="vo_body_link"/>
   </joint>
-  <link name="vo_camera_link">
+  <link name="vo_body_link">
     <inertial>
       <origin xyz="0.0061266 3.8568e-05 -1.9004e-05" rpy="0.0 0.0 0.0"/>
       <mass value="0.030988"/>
@@ -490,9 +490,8 @@
     <parent link="base_link_mb"/>
     <child link="inertial_link"/>
   </joint>
-  <joint name="wheel_left_joint" type="continuous">
+  <joint name="wheel_left_joint" type="fixed">
     <origin xyz="0.0 0.325 0.074" rpy="-1.57 0.0 0.0"/>
-    <axis xyz="0.0 0.0 1.0"/>
     <parent link="base_link_mb"/>
     <child link="wheel_left_link"/>
   </joint>
@@ -516,9 +515,8 @@
       </geometry>
     </collision>
   </link>
-  <joint name="wheel_right_joint" type="continuous">
+  <joint name="wheel_right_joint" type="fixed">
     <origin xyz="0.0 -0.325 0.074" rpy="-1.57 0.0 0.0"/>
-    <axis xyz="0.0 0.0 1.0"/>
     <parent link="base_link_mb"/>
     <child link="wheel_right_link"/>
   </joint>
@@ -990,7 +988,7 @@
     </plugin>
   </gazebo>
   <joint name="moving_base_to_ur5" type="fixed">
-    <origin xyz="-0.3045167259926804 -0.007351914077359987 0.7554713358430281" rpy="-0.00878433423372189 -0.007335589241887524 0.7794757711776688"/>
+    <origin xyz="-0.296 0.0 0.785" rpy="0.0 -0.0 0.7853981633974484"/>
     <parent link="base_link_mb"/>
     <child link="base_link"/>
   </joint>
@@ -1037,7 +1035,7 @@
   </joint>
   <link name="rgbd_hand_upper_mount"/>
   <joint name="rgbd_hand_depth_joint" type="fixed">
-    <origin xyz="-0.008111176018876695 -0.1321573510612559 0.020304664837274142" rpy="-0.008981481945661514 0.025474687154242084 0.0012071078941518654"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <parent link="rgbd_hand_link"/>
     <child link="rgbd_hand_depth_frame"/>
   </joint>
@@ -1061,7 +1059,7 @@
   </joint>
   <link name="rgbd_hand_infra_optical_frame"/>
   <joint name="rgbd_hand_color_joint" type="fixed">
-    <origin xyz="-0.02127901880429424 -0.0017042420271146314 0.01796930232408657" rpy="0.01693751492071353 -0.003971680354125521 -0.008793358053937585"/>
+    <origin xyz="0.0 0.0 0.024" rpy="0.0 0.0 0.0"/>
     <parent link="rgbd_hand_link"/>
     <child link="rgbd_hand_color_frame"/>
   </joint>
@@ -1106,7 +1104,7 @@
     </visual>
   </link>
   <joint name="world-pattern_link" type="fixed">
-    <origin xyz="4.39066259974647 -4.156050148663745 0.7105679051666834" rpy="1.8423057284286584 0.6138971825277025 -0.18964673326025014"/>
+    <origin xyz="1.5182264723763694 -0.4092490134541597 0.7853163135010803" rpy="-2.0699784166336674 -0.4113349600276195 -1.486539579691009"/>
     <parent link="world"/>
     <child link="pattern_link"/>
   </joint>
